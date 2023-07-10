@@ -4,7 +4,7 @@
     display: grid;
     margin: auto;
     grid-template-columns: 35% 30% auto;
-    width: 1110px;
+    width: 100%;
     background-color: white;
     border-radius: 6px;
     padding: 0px 15px;
@@ -17,5 +17,10 @@
     white-space: nowrap;
 }
 
-.checkbox {
+.checkbox:hover {
+    bakground-color: #939BF4;
+}
+
+.checkbox:checked {
+    background-color: #9e7f66;
 }

@@ -12,3 +12,7 @@
     border: none;
     border-radius: 6px;
 }
+
+.button:hover {
+    background-color: #939BF4;
+}

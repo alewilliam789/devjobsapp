@@ -35,5 +35,6 @@ html, body {
 }
 
 main {
+  margin: -125px 0px;
   padding: 5% 10%;
 }

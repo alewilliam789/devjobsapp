@@ -20,8 +20,14 @@ export default function SearchBar(){
             }
         });
 
-        function onSubmit(){
+        interface FormData {
+            jobDescriptor : string;
+            jobLocation: string;
+            fullTime: boolean;
+        }
 
+        function onSubmit(data : FormData){
+                console.log(data)
         }
 
         return (
@@ -33,7 +39,7 @@ export default function SearchBar(){
                         <input className={`${styles.checkbox}`} type="checkbox" {...register("fullTime")} />
                         <h4>Full-Time Only</h4>
                     </div>
-                    <Button buttonType='submit' placeholderText='Search' position='self-end'/>
+                    <Button buttonType='submit' placeholderText='Search'/>
                 </div>
             </form>
 

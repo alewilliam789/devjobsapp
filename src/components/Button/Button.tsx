@@ -8,7 +8,6 @@ import { ButtonType } from "../../types"
 interface ButtonProps {
     buttonType: ButtonType;
     placeholderText : string;
-    position: string;
 }
 
 
