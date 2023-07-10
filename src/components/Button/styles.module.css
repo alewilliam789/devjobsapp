@@ -1,0 +1,14 @@
+
+
+
+.button {
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 140px;
+    height: 48px;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    background-color: #5964E0;
+    border: none;
+    border-radius: 6px;
+}

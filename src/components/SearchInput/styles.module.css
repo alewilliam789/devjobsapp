@@ -1,5 +1,19 @@
+.search-layout {
+    gap: 15px;
+    width: 100%;
+    padding: 25px 6px;
+    border-right: solid 0.25px #F4F6F8;
+}
 
 
-.search-input {
-    padding-left: 20px;
+.search-box {
+    border: none; 
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 80%;
+    height: 100%;
+
+}
+
+.search-box:focus {
+    outline: none;
 }

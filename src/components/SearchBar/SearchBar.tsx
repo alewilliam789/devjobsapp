@@ -7,14 +7,15 @@ import styles from './styles.module.css';
 
 import {ReactComponent as SearchIcon} from '../../assets/desktop/icon-search.svg'
 import {ReactComponent as LocationIcon} from '../../assets/desktop/icon-location.svg'
+import Button from '../Button/Button';
 
 export default function SearchBar(){
     
     const {register, handleSubmit} = useForm(
         {
             defaultValues :{
-                jobDescriptor : "Filter by title, companies, expertise...",
-                jobLocation: "Filter by location...",
+                jobDescriptor : "",
+                jobLocation: "",
                 fullTime: false
             }
         });
@@ -24,10 +25,16 @@ export default function SearchBar(){
         }
 
         return (
-            <form id='job' className={`flex ${styles['search-bar']}`} onSubmit={handleSubmit(onSubmit)}>
-                <SearchInput register={register} searchParam={"jobDescriptor"} Icon={SearchIcon}/>
-                <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} />
-                <input type="checkbox" {...register("fullTime")} />
+            <form id='job' className={`${styles['search-bar']}`} onSubmit={handleSubmit(onSubmit)}>
+                <SearchInput register={register} searchParam={"jobDescriptor"} Icon={SearchIcon} placeholder="Enter desired job..." />
+                <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} placeholder="Filter by location..." />
+                <div className={`flex justify-between align-center ${styles.search}`}>
+                    <div className={`flex ${styles['full-time']}`}>
+                        <input className={`${styles.checkbox}`} type="checkbox" {...register("fullTime")} />
+                        <h4>Full-Time Only</h4>
+                    </div>
+                    <Button buttonType='submit' placeholderText='Search' position='self-end'/>
+                </div>
             </form>
 
         )

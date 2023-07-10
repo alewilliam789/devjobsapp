@@ -1,4 +1,13 @@
+html, body {
+  margin: 0px;
+  font-family: 'Kumbh Sans', sans-serif;
+}
 
+#root{
+  height: 100vh;
+  width: 100vw;
+  background-color: #F2F2F2;
+}
 
 .flex {
   display: flex;
@@ -7,4 +16,24 @@
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+main {
+  padding: 5% 10%;
 }
