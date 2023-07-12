@@ -1,26 +1,27 @@
 
 
-.search-bar {
+.searchbar {
     display: grid;
-    margin: auto;
-    grid-template-columns: 35% 30% auto;
+    grid-template-columns: auto auto 270px;
     width: 100%;
+    margin: auto;
     background-color: white;
     border-radius: 6px;
-    padding: 0px 15px;
+    padding: 0px 8px;
     gap: 20px;
 }
-.full-time {
-    gap: 5px;
+.searchbar-full-time {
+    gap: 8px;
 }
-.search {
+.searchbar-search {
+    gap: 5px;
     white-space: nowrap;
 }
 
-.checkbox:hover {
+.searchbar-checkbox:hover {
     bakground-color: #939BF4;
 }
 
-.checkbox:checked {
+.searchbar-checkbox:checked {
     background-color: #9e7f66;
 }

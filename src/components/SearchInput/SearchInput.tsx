@@ -25,9 +25,9 @@ interface SearchInputProps {
 export default function SearchInput({register, searchParam, Icon, placeholder} : SearchInputProps){
 
     return (
-        <div className={`flex align-center ${styles["search-layout"]}`}>
+        <div className={`flex align-center ${styles["searchinput-container"]}`}>
             <Icon />
-            <input placeholder={placeholder} className={ `flex ${styles["search-box"]}`} {...register(searchParam)}/>
+            <input placeholder={placeholder} className={ `flex ${styles["searchinput-box"]}`} {...register(searchParam)}/>
         </div>
     )
 }

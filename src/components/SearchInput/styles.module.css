@@ -1,4 +1,4 @@
-.search-layout {
+.searchinput-container {
     gap: 15px;
     width: 100%;
     padding: 25px 6px;
@@ -6,14 +6,14 @@
 }
 
 
-.search-box {
+.searchinput-box {
     border: none; 
     font-family: 'Kumbh Sans', sans-serif;
-    width: 80%;
+    width: 75%;
     height: 100%;
 
 }
 
-.search-box:focus {
+.searchinput-box:focus {
     outline: none;
 }
