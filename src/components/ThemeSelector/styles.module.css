@@ -1,0 +1,24 @@
+
+.themeselector-container {
+    gap: 15px;
+}
+
+
+.themeselector-base {
+    width: 50px;
+    height: 24px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.themeselector-circle {
+    width: 15px;
+    heigh: 15px;
+    margin: 5px 5px;
+    border-radius: 50%;
+    background-color: #5964E0;
+}
+.themeselector-circle:hover {
+    background-color: #939BF4
+}
+
