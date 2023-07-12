@@ -18,8 +18,16 @@ html, body {
   flex-direction: column;
 }
 
+.justify-start {
+  justify-content: start;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
 }
 
 .justify-evenly {
@@ -35,6 +43,6 @@ html, body {
 }
 
 main {
-  margin: -125px 0px;
-  padding: 5% 10%;
+  margin: -6.0% 10%;
+  padding: 4.5% 0%;
 }

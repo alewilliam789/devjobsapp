@@ -14,7 +14,7 @@ export default function Header(){
 
     return (
         <header className={styles.header} style={{backgroundImage: `url(${HeaderBackground})`}}>  
-            <section className={`flex align-center justify-between ${styles['header-content']}`}>
+            <section className={` flex justify-between ${styles['header-content']}`}>
                 <h1 className={`${styles["header-title"]}`}>devjobs</h1>
                 <ThemeSelector />
             </section>

@@ -5,7 +5,10 @@
     background-size: 100% 100%;
 }
 .header-content {
-    padding: 0px 10%;
+    width: 80%;
+    margin: 0px 10%;
+    padding: 0px 8px;
+    gap: 100px;
 }
 
 .header-title {
