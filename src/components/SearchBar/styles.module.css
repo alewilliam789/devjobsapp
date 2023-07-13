@@ -1,26 +1,62 @@
-
-
 .searchbar {
     display: grid;
-    grid-template-columns: auto auto 270px;
+    grid-template-columns: auto auto 35%;
     width: 100%;
     background-color: white;
     border-radius: 6px;
-    padding: 0px 8px;
-    gap: 20px;
+    padding: 0px 0px;
+    gap: 1.7%;
 }
+
+.searchbar > div {
+    padding-left: 4%;
+}
+
 .searchbar-full-time {
-    gap: 8px;
+    gap: 8%;
 }
+
+.searchbar-ft-text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
 .searchbar-search {
-    gap: 5px;
+    gap: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
     white-space: nowrap;
 }
 
-.searchbar-checkbox:hover {
-    bakground-color: #939BF4;
+.searchbar-checkbox {
+    width: 22px;
+    height: 22px;
+    margin: 0px;
+    flex-shrink: 0;
+}
+
+.searchbar-checkbox::before {
+    content:"";
+    display: block;
+    position: relative;
+    height: 22px;
+    width: 22px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    background-color: #939BF4;
+    border-radius: 4px; 
+}
+
+.searchbar-checkbox:hover::before {
+    opacity: 0.5;
+}
+
+.searchbar-checkbox:checked:hover::before {
+    opacity: 0;
 }
 
 .searchbar-checkbox:checked {
-    background-color: #9e7f66;
+    accent-color: #5964E0;
 }
