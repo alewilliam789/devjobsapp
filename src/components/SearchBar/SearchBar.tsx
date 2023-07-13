@@ -32,12 +32,16 @@ export default function SearchBar(){
 
         return (
             <form id='job' className={`${styles['searchbar']}`} onSubmit={handleSubmit(onSubmit)}>
+                <div>
                 <SearchInput register={register} searchParam={"jobDescriptor"} Icon={SearchIcon} placeholder="Enter desired job..." />
+                </div>
+                <div>
                 <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} placeholder="Filter by location..." />
+                </div>
                 <div className={`flex justify-between align-center ${styles["searchbar-search"]}`}>
-                    <div className={`flex ${styles['searchbar-full-time']}`}>
-                        <input className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
-                        <h4>Full Time</h4>
+                    <div className={`flex align-center ${styles['searchbar-full-time']}`}>
+                        <input id="full-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
+                        <label htmlFor="full-time" className={`${styles["searchbar-ft-text"]}`}>Full Time</label>
                     </div>
                     <Button buttonType='submit' placeholderText='Search'/>
                 </div>
