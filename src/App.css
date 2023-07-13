@@ -41,3 +41,8 @@ html, body {
 .align-center {
   align-items: center;
 }
+
+.app-content {
+  margin: -6.0% 10%;
+  padding: 4.5% 0%;
+}
