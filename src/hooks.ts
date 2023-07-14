@@ -7,6 +7,6 @@ import fetchJobs from './API';
 
 
 
-export default function useJobs(){
+export function useJobs(){
     return useQuery<JobData[], Error>(['job'],()=>fetchJobs())
 }
