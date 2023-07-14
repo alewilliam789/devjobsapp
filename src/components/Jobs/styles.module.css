@@ -1,6 +1,6 @@
 .jobs{
   width: 100%;
-  gap: 40px;
+  gap: 31px;
 }
 
 
@@ -9,10 +9,10 @@
   padding: 0px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat( auto-fill,300px);
+  grid-template-rows: repeat( auto-fill, 253px);
   justify-content: space-between;
   grid-column-end: auto;
-  gap: 40px 10px;
+  gap: 40px 11px;
   }
 
 
@@ -20,8 +20,23 @@
   list-style-type: none;
 }
 
+@media (min-width:1440px){
+  .jobs-cardlist {
+    grid-template-columns: repeat(auto-fill,350px);
+  }
+}
 
-@media screen and (max-width: 767px){
+@media (max-width: 1439px) and (min-width:768px){
+  .jobs-cardlist {
+    grid-template-columns: repeat(auto-fill,339px);
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .jobs-cardlist {
+    grid-template-columns: repeat(auto-fill,327px);
+  }
     section > .jobs-cardlist {
       justify-content: center;
     }
