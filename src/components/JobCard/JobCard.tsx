@@ -12,7 +12,7 @@ interface JobCardProps {
 export default function JobCard({job}: JobCardProps){
     return (
         <>
-        <div className={styles.jobcard}>
+        <div id="jobcard" className={styles.jobcard}>
             <Icon iconURL={job.logo} bgColor={job.logoBackground}/>
             <main className={` ${styles["jobcard-body"]}`}>
                 <div className={`${styles["jobcard-text"]}`}>
