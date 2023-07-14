@@ -1,4 +1,27 @@
-.jobs {
-    margin: -6.0% 10%;
-    padding: 4.5% 0%;
+.jobs{
+  width: 100%;
+}
+
+
+.jobs-cardlist {
+  align-self: center;
+  padding: 0px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat( auto-fill,300px);
+  justify-content: space-between;
+  grid-column-end: auto;
+  gap: 40px 10px;
   }
+
+
+.jobs-card {
+  list-style-type: none;
+}
+
+
+@media screen and (max-width: 767px){
+    section > .jobs-cardlist {
+      justify-content: center;
+    }
+}
