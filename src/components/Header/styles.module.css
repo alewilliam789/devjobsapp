@@ -8,6 +8,7 @@
 }
 .header-content {
     width: 100%;
+    transition: all 1s ease;
 }
 
 .header-title {
