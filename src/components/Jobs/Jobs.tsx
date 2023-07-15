@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { useQueryClient } from "@tanstack/react-query";
 
 
@@ -36,6 +36,17 @@ export default function Jobs(){
     const definedData = isUndefined(data);
 
     const [resultCount, setResultCount] = useState<number>(12);
+
+    useLayoutEffect(()=>{
+        setResultCount((prevState)=>{
+            if(window.innerWidth > 2323){
+                return 10;
+            }
+            else{
+                return prevState
+            }
+        })
+    },[window.innerWidth])
 
     
 
