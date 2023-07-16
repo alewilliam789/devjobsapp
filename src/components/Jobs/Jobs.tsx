@@ -56,8 +56,8 @@ export default function Jobs(){
         queryClient.setQueryData(['job',{id: job.id}], job)
             if(index <= resultCount-1){
                 return(
-                    <Link to={`jobs/${job.id}`} style={{color:'inherit'}}>
-                    <li className={styles['jobs-card']} key={job.id}>
+                    <Link to={`jobs/${job.id}`} style={{color:'inherit'}} key={job.id}>
+                    <li className={styles['jobs-card']}>
                         <JobCard job={job} />
                     </li>
                     </Link>

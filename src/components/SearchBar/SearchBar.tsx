@@ -43,7 +43,7 @@ export default function SearchBar(){
                         <input id="full-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
                         <label htmlFor="full-time" className={`${styles["searchbar-ft-text"]}`}>Full Time</label>
                     </div>
-                    <Button buttonType='submit' placeholderText='Search'/>
+                    <Button buttonType='submit' placeholderText='Search' handleClick={undefined}/>
                 </div>
             </form>
 
