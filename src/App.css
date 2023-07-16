@@ -1,12 +1,19 @@
 html, body {
   margin: 0px;
+  padding: 0px;
   font-family: 'Kumbh Sans', sans-serif;
+  width: 100%;
 }
 
 #root{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: #F2F2F2;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .flex {
@@ -42,7 +49,55 @@ html, body {
   align-items: center;
 }
 
-main {
-  margin: -6.0% 10%;
+.app-content {
   padding: 4.5% 0%;
+  transition: all 1s ease;
+}
+
+@media (min-width:1440px){
+  .app-content {
+    margin: 0px 11.4%;
+    margin-top: -6.0%;
+  }
+}
+
+
+@media (max-width: 1439px) and (min-width:768px){
+  .app-content {
+    margin: 0px 5%;
+    margin-top: -7.5%;
+  }
+}
+
+@media (max-width: 768px){
+  .app-content {
+    margin: 0px 6.4%;
+    margin-top: -9.5%;
+  }
+
+}
+
+@media (min-width: 1857px){
+  body {
+    height: 1350px;
+  }
+}
+
+
+@media (min-width: 1155px){
+  body {
+    height: 1850px;
+  }
+}
+
+@media (max-width: 1155px) and (min-width:762px){
+  body {
+    height: 2750px;
+  }
+}
+
+@media (max-width: 762px) {
+  body {
+    height: 4750px;
+  }
 }
