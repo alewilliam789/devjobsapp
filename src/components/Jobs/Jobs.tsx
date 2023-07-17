@@ -7,7 +7,7 @@ import JobCard from "../JobCard/JobCard";
 import SearchBar from "../SearchBar/SearchBar";
 
 
-import { useJobs } from "../../hooks";
+import { useJobs, useScreenWidth, useResultCount } from "../../hooks";
 
 import { JobData } from "../../types";
 
@@ -31,25 +31,12 @@ export default function Jobs(){
 
     const queryClient = useQueryClient()
 
+    const width = useScreenWidth();
+
+    const {resultCount, setResultCount} = useResultCount(width.width)
+
     
-
-
     const definedData = isUndefined(data);
-
-    const [resultCount, setResultCount] = useState<number>(12);
-
-    useLayoutEffect(()=>{
-        setResultCount((prevState)=>{
-            if(window.innerWidth > 2323){
-                return 10;
-            }
-            else{
-                return prevState
-            }
-        })
-    },[window.innerWidth])
-
-    
 
     
     const jobList = definedData.map((job, index)=> {
