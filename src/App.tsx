@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 
@@ -8,12 +8,17 @@ import './App.css'
 
 function App() {
 
+  const [blur, setBlur] = useState<string>("")
+
   return (
     <>
-    <Header />
-    <main className={`app-content`}>
-      <Outlet />
-    </main>
+      <div className={`app ${blur}`}>
+        <button onClick={()=>{setBlur("blur")}}>Here's the blur</button>
+        <Header />
+        <main className={`app-content`}>
+          <Outlet />
+        </main>
+      </div>
     </>
   )
 }
