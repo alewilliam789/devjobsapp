@@ -76,11 +76,11 @@
   
   @media screen and (max-width: 729px){
     .searchbar {
-        grid-template-columns: auto 150px;
+        grid-template-columns: auto 125px;
     }
 
     .searchbar-search {
-        gap: 35%;
+        gap: 25%;
         white-space: nowrap;
     }
   }

@@ -1,20 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 
 
-import App from './App.tsx'
+import App from './App.tsx';
 import Jobs from './components/Jobs/Jobs.tsx';
-import './index.css'
-import { QueryClient } from '@tanstack/react-query';
+
+import { BlurProvider } from './context/BlurContext.tsx';
+
+
+import './index.css';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (<App />),
+    element: (
+            <BlurProvider>
+              <App />
+            </BlurProvider>),
     children: [
       {
         index: true,

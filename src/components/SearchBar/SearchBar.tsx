@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 
 
 import { useScreenWidth } from '../../hooks';
+import { useBlurContext } from '../../context/BlurContext';
 
 
 import styles from './styles.module.css';
@@ -13,14 +14,16 @@ import Button from '../Button/Button';
 
 import {ReactComponent as SearchIcon} from '../../assets/desktop/icon-search.svg';
 import {ReactComponent as LocationIcon} from '../../assets/desktop/icon-location.svg';
-import {ReactComponent as MobileSearchIcon} from '../../assets/mobile/icon-search-white.svg';
 import {ReactComponent as FilterIcon} from '../../assets/mobile/icon-filter.svg';
+
 
 
 
 export default function SearchBar(){
 
     const { width } = useScreenWidth();
+
+    const {setBlur} = useBlurContext()
     
     const {register, handleSubmit} = useForm(
         {
@@ -47,8 +50,10 @@ export default function SearchBar(){
                 return (
                     <>
                         <div className={`flex align-center justify-center ${styles["searchbar-search"]}`}>
-                            <FilterIcon />
-                            <Button buttonType='submit' Icon={MobileSearchIcon} handleClick={undefined} placeholderText={undefined} size={{width:"45px",height:"45px"}}/>
+                            <FilterIcon fill='#6E8098' onClick={()=>{setBlur("blur")}}/>
+                            <Button buttonType='submit' handleClick={undefined} placeholderText={undefined} size={{width:"45px",height:"45px"}}>
+                                    <SearchIcon fill='#FFFFFF'/>
+                            </Button>
                         </div>
                     </>
                 )
