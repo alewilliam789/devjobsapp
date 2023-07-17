@@ -19,25 +19,26 @@ export function useJobs(){
 }
 
 export function useScreenWidth(){
-    function getWindowWidth() {
-        const { innerWidth: width} = window;
+    function getWindowSize() {
+        const { innerWidth: width, innerHeight: height} = window;
         return {
-          width
+          width,
+          height
         };
       }
       
-    const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+    const [windowSize, setWindowSize] = useState(getWindowSize());
     
     useEffect(() => {
         function handleResize() {
-        setWindowWidth(getWindowWidth());
+        setWindowSize(getWindowSize());
         }
     
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
     
-    return windowWidth
+    return windowSize
 }
 
 export function useResultCount(windowWidth : number){
