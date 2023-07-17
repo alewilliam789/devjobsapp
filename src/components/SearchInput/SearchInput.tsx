@@ -16,7 +16,7 @@ interface SearchInputProps {
     searchParam : SearchParams,
     Icon : React.FunctionComponent<React.SVGProps<SVGSVGElement> & {
         title?: string | undefined;
-    }>,
+    }> | null,
     placeholder : string;
 }
 
@@ -26,7 +26,7 @@ export default function SearchInput({register, searchParam, Icon, placeholder} :
 
     return (
         <div className={`flex align-center ${styles["searchinput-container"]}`}>
-            <Icon />
+            {Icon && <Icon />}
             <input placeholder={placeholder} className={ `flex ${styles["searchinput-box"]}`} {...register(searchParam)}/>
         </div>
     )
