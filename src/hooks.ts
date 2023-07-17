@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import {useQuery} from '@tanstack/react-query';
 
 
@@ -37,5 +37,23 @@ export function useScreenWidth(){
         return () => window.removeEventListener("resize", handleResize);
     }, []);
     
-    return windowWidth;
+    return windowWidth
+}
+
+export function useResultCount(windowWidth : number){
+
+    const [resultCount, setResultCount] = useState<number>(12);
+
+    useLayoutEffect(()=>{
+        setResultCount(()=>{
+            if(windowWidth > 2323){
+                return 10;
+            }
+            else{
+                return 12
+            }
+        })
+    },[windowWidth])
+
+    return {resultCount, setResultCount}
 }
