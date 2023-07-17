@@ -1,6 +1,5 @@
 .searchbar {
     display: grid;
-    grid-template-columns: auto auto 35%;
     width: 100%;
     background-color: white;
     border-radius: 6px;
@@ -60,3 +59,28 @@
 .searchbar-checkbox:checked {
     accent-color: #5964E0;
 }
+
+@media (min-width: 729px){
+    .searchbar {
+        grid-template-columns: auto auto 35%;
+    }
+
+    .searchbar-search {
+        gap: 8%;
+        padding-left: 5%;
+        padding-right: 5%;
+        white-space: nowrap;
+    }
+  }
+  
+  
+  @media screen and (max-width: 729px){
+    .searchbar {
+        grid-template-columns: auto 150px;
+    }
+
+    .searchbar-search {
+        gap: 35%;
+        white-space: nowrap;
+    }
+  }
