@@ -9,16 +9,14 @@ interface ButtonProps {
     buttonType: ButtonType;
     placeholderText : string | undefined;
     handleClick: (()=>void) | undefined;
-    Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement> & {
-        title?: string | undefined;
-    }>;
-    size?: ButtonSize
+    size?: ButtonSize;
+    children?: string | JSX.Element
 }
 
 
 
-export default function Button({buttonType, placeholderText, handleClick, Icon, size}: ButtonProps){
+export default function Button({buttonType, handleClick, size, children, placeholderText}: ButtonProps){
     return (
-        <button type={buttonType} onClick={handleClick} className={`${styles.button}`} style={{width:`${size?.width || "141px"}`, height:`${size?.height || "48px"}`,padding:`${ size ? "0px 5px":""}`}}>{placeholderText || Icon && <Icon />}</button>
+        <button type={buttonType} onClick={handleClick} className={`${styles.button}`} style={{width:`${size?.width || "141px"}`, height:`${size?.height || "48px"}`,padding:`${ size ? "0px 5px":""}`}}>{children || placeholderText}</button>
     )
 }
