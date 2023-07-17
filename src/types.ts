@@ -2,7 +2,12 @@
 export type SearchParams = "jobDescriptor" | "jobLocation"
 "fullTime"
 
-export type ButtonType = "button" | "reset" | "submit";
+export type ButtonType = "button" | "reset" | "submit" ;
+
+export interface ButtonSize {
+  width : string,
+  height : string
+}
 
 export interface JobData {
     id : number,
