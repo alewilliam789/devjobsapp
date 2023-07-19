@@ -10,6 +10,7 @@
 .header-content {
     width: 100%;
     transition: all 1s ease;
+    padding-bottom: 41px;
 }
 
 .header-title {
