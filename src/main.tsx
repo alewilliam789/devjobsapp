@@ -9,8 +9,6 @@ import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persist
 import App from './App.tsx';
 import Jobs from './components/Jobs/Jobs.tsx';
 
-import { BlurProvider } from './context/BlurContext.tsx';
-
 
 import './index.css';
 
@@ -18,10 +16,7 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-            <BlurProvider>
-              <App />
-            </BlurProvider>),
+    element: (<App />),
     children: [
       {
         index: true,
