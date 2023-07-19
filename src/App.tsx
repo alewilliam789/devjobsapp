@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 
@@ -10,10 +10,12 @@ function App() {
 
   return (
     <>
-    <Header />
-    <main className={`app-content`}>
-      <Outlet />
-    </main>
+      <div className={`app`}>
+        <Header />
+        <main className={`app-content`}>
+          <Outlet />
+        </main>
+      </div>
     </>
   )
 }
