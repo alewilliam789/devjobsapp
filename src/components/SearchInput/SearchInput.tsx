@@ -26,7 +26,7 @@ export default function SearchInput({register, searchParam, Icon, placeholder} :
 
     return (
         <div className={`flex align-center ${styles["searchinput-container"]}`}>
-            {Icon && <Icon />}
+            {Icon && <Icon fill='#5964E0'/>}
             <input placeholder={placeholder} className={ `flex ${styles["searchinput-box"]}`} {...register(searchParam)}/>
         </div>
     )
