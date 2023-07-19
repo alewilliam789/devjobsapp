@@ -23,7 +23,7 @@ export default function SearchBar(){
 
     const { width } = useScreenWidth();
 
-    const [hidden, setHidden] = useState(true);
+    const [hidden, setHidden] = useState(false);
     
     const {register, handleSubmit} = useForm(
         {
@@ -91,7 +91,7 @@ export default function SearchBar(){
                                 <div className='flex justify-center' style={{marginTop:"227px"}}>
                                     <div style={{overflow:"hidden", width:"327px", height: "217px", backgroundColor:'white', borderRadius: "6px"}}>
                                         <div className="flex-column justify-evenly" style={{height: "100%", width: "100%", paddingLeft:"16px"}}>
-                                            <div style={{width:"100%", marginLeft:"-15px", paddingLeft: "10px",marginTop:"-30px", borderBottom:"1px solid"}}>
+                                            <div style={{width:"100%", marginLeft:"-15px", paddingLeft: "10px",marginTop:"-30px", borderBottom:"1px solid #F4F8F6"}}>
                                             <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} placeholder="Filter by location..." />
                                             </div>
                                             <FullTimeCheckbox />
@@ -103,7 +103,7 @@ export default function SearchBar(){
                         )}
                 <form id='job' className={`${styles['searchbar']}`} onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width < 762) ? SearchIcon : null} placeholder="Enter desired job..." />
+                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 762) ? SearchIcon : null} placeholder="Enter desired job..." />
                     </div>
                     <SearchBarSwitcher />
                 </form>

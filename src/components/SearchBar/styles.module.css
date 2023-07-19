@@ -35,6 +35,12 @@
     flex-shrink: 0;
 }
 
+.searchbar-mobile-popup{
+    height: '100%';
+    width: '150%';
+    backdropFilter:"blur(2px) brightness(60%)";
+}
+
 .searchbar-checkbox::before {
     content:"";
     display: block;
