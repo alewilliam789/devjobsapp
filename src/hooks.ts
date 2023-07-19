@@ -1,8 +1,8 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
-import {useQuery} from '@tanstack/react-query';
+import {QueryClient, useQuery} from '@tanstack/react-query';
 
 
-import fetchJobs from './API';
+import { fetchJob, fetchJobs } from './API';
 
 
 import { JobData } from './types';
@@ -16,6 +16,10 @@ import { JobData } from './types';
 
 export function useJobs(){
     return useQuery<JobData[], Error>(['job'],()=>fetchJobs())
+}
+
+export function useJob(jobId : string){
+        return useQuery<JobData, Error>(['job',{id:jobId}],()=>fetchJob(jobId))
 }
 
 export function useScreenWidth(){
