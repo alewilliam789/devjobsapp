@@ -60,21 +60,19 @@
     accent-color: #5964E0;
 }
 
-@media (min-width: 729px){
+@media (min-width: 762px){
     .searchbar {
         grid-template-columns: auto auto 35%;
     }
 
     .searchbar-search {
         gap: 8%;
-        padding-left: 5%;
-        padding-right: 5%;
         white-space: nowrap;
     }
   }
   
   
-  @media screen and (max-width: 729px){
+  @media screen and (max-width: 762px){
     .searchbar {
         grid-template-columns: auto 125px;
     }
