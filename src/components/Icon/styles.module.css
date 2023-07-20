@@ -1,8 +1,12 @@
 
 
-.icon {
+.icon-card {
     position: relative;
     z-index: 1;
     margin-bottom: -20px;
     margin-left: 30px;
+}
+
+.icon-description {
+    
 }
