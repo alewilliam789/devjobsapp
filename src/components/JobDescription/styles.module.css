@@ -2,7 +2,7 @@
 
 .jobdescription {
     width: 730px;
-    margin:  -10px auto;
+    margin: -10px auto;
     gap: 32px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .jobdescription-text-requirements > ul {
-    padding-left: 15px;
+    padding-left: 18px;
 }
 
 .jobdescription-text-requirements > ul > li {

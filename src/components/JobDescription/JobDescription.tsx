@@ -73,9 +73,8 @@ export default function JobDescription(){
                     <section className={`flex-column ${styles["jobdescription-text-requirements"]}`}>
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
-                        <ul>{requirementsLi}</ul>
-                    </section>
-                    
+                        <ul className="flex-column justify-start">{requirementsLi}</ul>
+                    </section>  
                 </section>
             </>
         )
