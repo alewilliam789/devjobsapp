@@ -27,7 +27,7 @@ export default function JobDescription(){
                 <header className={`flex justify-start align-center ${styles["jobdescription-header"]}`}>
                     <Icon iconURL={data ? data.logo : ""} iconType="description" bgColor={data ? data.logoBackground : "white"} iconSize={{width:"81px", height:"max-content"}} 
                         logoSize={{width:"140px",height:"140px"}} borderRad="0px"/>
-                    <div className={`flex justify-between align-center ${styles["jobdescription-company"]}`}>
+                    <div className={`flex justify-between align-center ${styles["jobdescription-header-company"]}`}>
                         <div>
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
@@ -39,12 +39,30 @@ export default function JobDescription(){
         )
     }
 
+    function JobText(){
+        return (
+            <>
+                <section className={`${styles["jobdescription-text"]}`}>
+                    <header className={`flex justify-between align-center`} style={{height: "87px"}}>
+                        <div className={`flex-column justify-start ${styles["jobdescription-text-header"]}`}>
+                            <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
+                            <h2>{data ? data.position : ""}</h2>
+                            <h4>{data ? data.location : ""}</h4>
+                        </div>
+                        <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
+                    </header>
+                </section>
+            </>
+        )
+    }
+
 
 
     return (
         <>
-            <section className={`${styles.jobdescription}`}>
+            <section className={`flex-column justify-center ${styles.jobdescription}`}>
                     <JobHeader />
+                    <JobText />
             </section>
         </>
     )

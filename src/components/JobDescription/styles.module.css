@@ -3,7 +3,7 @@
 .jobdescription {
     width: 730px;
     margin:  -10px auto;
-
+    gap: 32px;
 }
 
 
@@ -16,9 +16,24 @@
 }
 
 
-.jobdescription-company {
+.jobdescription-header-company {
     width: 69%;
     margin: 0px 40px;
+}
 
-    
+.jobdescription-text {
+    height: 1257px;
+    padding: 48px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.jobdescription-text-header {
+    gap: 8px;
+
+}
+
+.jobdescription-text-header > :is(p,h2,h4){
+    margin: 0px;
+    padding: 0px;
 }
