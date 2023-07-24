@@ -45,7 +45,8 @@ export default function JobDescription(){
             const requirementsLi = (typeof data != "undefined") 
             ? data.requirements.items.map((item, index)=>{
                     return (
-                        <li key={index}>{item}</li>
+
+                        <li key={index}className="flex"><div className={`${styles["jobdescription-li-bullet"]}`}></div>{item}</li>
                     )
                 })
             : (
@@ -74,7 +75,7 @@ export default function JobDescription(){
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
                         <ul className="flex-column justify-start">{requirementsLi}</ul>
-                    </section>  
+                    </section>
                 </section>
             </>
         )

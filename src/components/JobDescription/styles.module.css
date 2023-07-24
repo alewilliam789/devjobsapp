@@ -40,9 +40,21 @@
 }
 
 .jobdescription-text-requirements > ul {
-    padding-left: 18px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    gap: 8px;
+}
+
+.jobdescription-li-bullet:before {
+    content: "\2022";
+    color: #5964E0;
+    font-weight: bold;
+    width: 4px;
+    vertical-align: middle;
+    padding-right: 32px;
 }
 
 .jobdescription-text-requirements > ul > li {
-    padding-left: 32px;
+    margin-bottom: 8px;
 }
