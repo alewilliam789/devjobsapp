@@ -39,21 +39,42 @@ export default function JobDescription(){
         )
     }
 
+    interface CustomLiProps {
+        index: number;
+        bullet?: string;
+        item: string;
+    }
+
+
+    function CustomLi ({index, bullet, item}: CustomLiProps) {
+        return(
+            <li className="flex"><div className={bullet ? `${styles["jobdescription-li-number"]}` : `${styles["jobdescription-li-bullet"]}`}>{bullet ? bullet: null}</div>{item}</li>
+        )
+    }
+
+
+    interface liListProps {
+        firstId : "requirements" | "role",
+    }
+
+    function liList ({ firstId } : liListProps){
+        const requirementsLi = (typeof data != "undefined") 
+            ? data[`${firstId}`]["items"].map((item, index)=>{
+                return (
+
+                    <CustomLi key={index} index={index} item={item} bullet={firstId == "requirements" ? undefined: `${index+1}`}/>
+                )
+            })
+        : (
+                <li>
+                    There have been no requirements listed
+                </li>
+            );
+        
+        return requirementsLi
+    }
+
     function JobText(){
-
-
-            const requirementsLi = (typeof data != "undefined") 
-            ? data.requirements.items.map((item, index)=>{
-                    return (
-
-                        <li key={index}className="flex"><div className={`${styles["jobdescription-li-bullet"]}`}></div>{item}</li>
-                    )
-                })
-            : (
-                    <li>
-                        There have been no requirements listed
-                    </li>
-                );
             
 
 
@@ -74,7 +95,12 @@ export default function JobDescription(){
                     <section className={`flex-column ${styles["jobdescription-text-requirements"]}`}>
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
-                        <ul className="flex-column justify-start">{requirementsLi}</ul>
+                        <ul className="flex-column justify-start">{liList({firstId:"requirements"})}</ul>
+                    </section>
+                    <section>
+                        <h3 style={{marginBottom:"23px"}}>What You Will Do</h3>
+                        <p style={{marginBottom:"24px"}}>{data ? data.role.content : ""}</p>
+                        <ol className="flex-column justify-start">{liList({firstId:"role"})}</ol>
                     </section>
                 </section>
             </>
