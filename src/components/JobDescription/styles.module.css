@@ -26,6 +26,7 @@
     padding: 48px;
     background-color: white;
     border-radius: 6px;
+    gap: 40px;
 }
 
 .jobdescription-text-header {
@@ -36,4 +37,12 @@
 .jobdescription-text-header > :is(p,h2,h4){
     margin: 0px;
     padding: 0px;
+}
+
+.jobdescription-text-requirements > ul {
+    padding-left: 15px;
+}
+
+.jobdescription-text-requirements > ul > li {
+    padding-left: 32px;
 }

@@ -40,9 +40,25 @@ export default function JobDescription(){
     }
 
     function JobText(){
+
+
+            const requirementsLi = (typeof data != "undefined") 
+            ? data.requirements.items.map((item, index)=>{
+                    return (
+                        <li key={index}>{item}</li>
+                    )
+                })
+            : (
+                    <li>
+                        There have been no requirements listed
+                    </li>
+                );
+            
+
+
         return (
             <>
-                <section className={`${styles["jobdescription-text"]}`}>
+                <section className={`flex-column ${styles["jobdescription-text"]}`}>
                     <header className={`flex justify-between align-center`} style={{height: "87px"}}>
                         <div className={`flex-column justify-start ${styles["jobdescription-text-header"]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
@@ -51,6 +67,15 @@ export default function JobDescription(){
                         </div>
                         <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
                     </header>
+                    <p>
+                        {data ? data.description : ""}
+                    </p>
+                    <section className={`flex-column ${styles["jobdescription-text-requirements"]}`}>
+                        <h3 style={{marginBottom:"28px"}}>Requirements</h3>
+                        <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
+                        <ul>{requirementsLi}</ul>
+                    </section>
+                    
                 </section>
             </>
         )
