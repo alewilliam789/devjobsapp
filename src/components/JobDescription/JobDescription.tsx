@@ -7,6 +7,7 @@ import Icon from "../Icon/Icon";
 
 
 import styles from './styles.module.css';
+import Button from "../Button/Button";
 
 
 
@@ -23,12 +24,17 @@ export default function JobDescription(){
     function JobHeader(){
         return (
             <>
-                <div className={` flex ${styles.jobdescription}`}>
                 <header className={`flex justify-start align-center ${styles["jobdescription-header"]}`}>
                     <Icon iconURL={data ? data.logo : ""} iconType="description" bgColor={data ? data.logoBackground : "white"} iconSize={{width:"81px", height:"max-content"}} 
                         logoSize={{width:"140px",height:"140px"}} borderRad="0px"/>
+                    <div className={`flex justify-between align-center ${styles["jobdescription-company"]}`}>
+                        <div>
+                            <h3>{data?.company}</h3>
+                            <p>{data?.website}</p>
+                        </div>
+                        <Button buttonType="button" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} />
+                    </div>
                 </header>
-                </div>
             </>
         )
     }
@@ -37,8 +43,8 @@ export default function JobDescription(){
 
     return (
         <>
-            <section>
-                <JobHeader />
+            <section className={`${styles.jobdescription}`}>
+                    <JobHeader />
             </section>
         </>
     )

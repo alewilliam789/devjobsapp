@@ -1,10 +1,10 @@
+
+
 .jobdescription {
     width: 730px;
-    margin: 0px auto;
+    margin:  -10px auto;
+
 }
-
-
-
 
 
 .jobdescription-header {
@@ -13,4 +13,12 @@
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
+}
+
+
+.jobdescription-company {
+    width: 69%;
+    margin: 0px 40px;
+
+    
 }
