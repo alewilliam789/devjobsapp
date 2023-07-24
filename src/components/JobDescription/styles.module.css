@@ -1,6 +1,7 @@
 
 
 .jobdescription {
+    color: inherit;
     width: 730px;
     margin: -10px auto;
     gap: 32px;
@@ -21,7 +22,7 @@
     margin: 0px 40px;
 }
 
-.jobdescription-text {
+.jobdescription-main {
     height: max-content;
     padding: 48px;
     background-color: white;
@@ -29,12 +30,12 @@
     gap: 40px;
 }
 
-.jobdescription-text-header {
+.jobdescription-main-header {
     gap: 8px;
 
 }
 
-.jobdescription-text-header > :is(p,h2,h4){
+.jobdescription-main-header > :is(p,h2,h4){
     margin: 0px;
     padding: 0px;
 }
@@ -63,5 +64,5 @@ ul, ol {
     padding-right: 32px;
 }
 
-.jobdescription-text-requirements > ul > li {
+.jobdescription-main-requirements > ul > li {
 }

@@ -48,7 +48,7 @@ export default function JobDescription(){
 
     function CustomLi ({index, bullet, item}: CustomLiProps) {
         return(
-            <li className="flex"><div className={bullet ? `${styles["jobdescription-li-number"]}` : `${styles["jobdescription-li-bullet"]}`}>{bullet ? bullet: null}</div>{item}</li>
+            <li className="flex align-start"><div className={bullet ? `${styles["jobdescription-li-number"]}` : `${styles["jobdescription-li-bullet"]}`}>{bullet ? bullet: null}</div>{item}</li>
         )
     }
 
@@ -74,25 +74,23 @@ export default function JobDescription(){
         return requirementsLi
     }
 
-    function JobText(){
-            
-
-
+    function JobMain(){
+    
         return (
             <>
-                <section className={`flex-column ${styles["jobdescription-text"]}`}>
+                <main className={`flex-column ${styles["jobdescription-main"]}`}>
                     <header className={`flex justify-between align-center`} style={{height: "87px"}}>
-                        <div className={`flex-column justify-start ${styles["jobdescription-text-header"]}`}>
+                        <div className={`flex-column justify-start ${styles["jobdescription-main-header"]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
                             <h2>{data ? data.position : ""}</h2>
-                            <h4>{data ? data.location : ""}</h4>
+                            <h4 className="location-text">{data ? data.location : ""}</h4>
                         </div>
                         <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
                     </header>
                     <p>
                         {data ? data.description : ""}
                     </p>
-                    <section className={`flex-column ${styles["jobdescription-text-requirements"]}`}>
+                    <section className={`flex-column ${styles["jobdescription-main-requirements"]}`}>
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
                         <ul className="flex-column justify-start">{liList({firstId:"requirements"})}</ul>
@@ -102,7 +100,7 @@ export default function JobDescription(){
                         <p style={{marginBottom:"24px"}}>{data ? data.role.content : ""}</p>
                         <ol className="flex-column justify-start">{liList({firstId:"role"})}</ol>
                     </section>
-                </section>
+                </main>
             </>
         )
     }
@@ -113,7 +111,7 @@ export default function JobDescription(){
         <>
             <section className={`flex-column justify-center ${styles.jobdescription}`}>
                     <JobHeader />
-                    <JobText />
+                    <JobMain />
             </section>
         </>
     )
