@@ -48,7 +48,7 @@ export default function JobDescription(){
 
     function CustomLi ({index, bullet, item}: CustomLiProps) {
         return(
-            <li className="flex align-start"><div className={bullet ? `${styles["jobdescription-li-number"]}` : `${styles["jobdescription-li-bullet"]}`}>{bullet ? bullet: null}</div>{item}</li>
+            <li className="flex align-start"><div className={bullet ? styles["jobdescription-li-number"] : styles["jobdescription-li-bullet"]}>{bullet ? bullet: null}</div>{item}</li>
         )
     }
 
@@ -105,6 +105,15 @@ export default function JobDescription(){
         )
     }
 
+    function JobFooter(){
+        return (
+            <>
+            <footer className={styles[`jobdescription-footer`]}>
+            </footer>
+            </>
+        )
+    }
+
 
 
     return (
@@ -112,6 +121,7 @@ export default function JobDescription(){
             <section className={`flex-column justify-center ${styles.jobdescription}`}>
                     <JobHeader />
                     <JobMain />
+                    <JobFooter />
             </section>
         </>
     )

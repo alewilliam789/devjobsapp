@@ -64,5 +64,11 @@ ul, ol {
     padding-right: 32px;
 }
 
-.jobdescription-main-requirements > ul > li {
+.jobdescription-footer {
+    position: fixed;
+    top: 92.5vh;
+    left: 0;
+    width: 100vw;
+    height: 96px;
+    background-color: white;
 }
