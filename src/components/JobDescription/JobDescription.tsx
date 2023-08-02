@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 
-import { useJob, useScreenYOffset } from "../../hooks";
+import { useJob, useScreenWidth, useScreenYOffset } from "../../hooks";
 import { JobData } from "../../types";
 import Icon from "../Icon/Icon";
 
@@ -22,6 +22,8 @@ export default function JobDescription(){
     const { data } = useJob(jobId ? jobId : "");
 
     const windowY = useScreenYOffset();
+
+    const { width }  = useScreenWidth();
 
     useEffect(()=>{
         window.scrollTo(0,0)
@@ -117,12 +119,12 @@ export default function JobDescription(){
         return (
             <>
             <footer className={` flex justify-center ${styles[`jobdescription-footer`]}`}>
-                <div className={` flex justify-between align-center ${styles["jobdescription-footer-content"]}`}>
-                    <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
+                <div className={` flex ${width>= 768 ? "justify-between" : "justify-center"} align-center ${styles["jobdescription-footer-content"]}`}>
+                    { width >= 768 ? <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
                         <h3 style={{marginTop: "0px", marginBottom: "0px"}}>{data ? data.position : ""}</h3>
                         <p>{data ? data.company : ""}</p>
-                    </div>
-                    <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
+                    </div> : null}
+                    <Button buttonType="button" placeholderText="Apply Now" size={width>=768 ? undefined : {width:"327px",height:"48px"}} handleClick={()=>{}} />
                 </div>
             </footer>
             </>
