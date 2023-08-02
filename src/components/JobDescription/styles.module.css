@@ -2,6 +2,7 @@
 
 .jobdescription {
     color: inherit;
+    background-color: inherit;
     width: 730px;
     margin: -10px auto;
     gap: 32px;
@@ -77,11 +78,42 @@ ul, ol {
 
 .jobdescription-footer-content {
     position: relative;
-    width: 730px;
     height: 100%;
     margin: 0px auto;
 }
 
 .jobdescription-footer-content-text {
     gap: 12px;
+}
+
+@media (min-width:1440px){
+    .jobdescription {
+     
+     width: 730px;
+    }
+
+    .jobdescription-footer-content {
+        width: 730px;
+    }
+  }
+  
+@media (max-width: 1439px) and (min-width:767px){
+    .jobdescription {
+        width: 689px;
+    }
+
+    .jobdescription-footer-content {
+        width: 689px;
+    }
+}
+  
+  
+@media screen and (max-width: 767px){
+    .jobdescription {
+        width: 327px;
+    }
+
+    .jobdescription-footer-content {
+        width: 327px;
+    }
 }

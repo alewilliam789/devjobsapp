@@ -116,7 +116,7 @@ export default function JobDescription(){
 
         return (
             <>
-            <footer className={styles[`jobdescription-footer`]}>
+            <footer className={` flex justify-center ${styles[`jobdescription-footer`]}`}>
                 <div className={` flex justify-between align-center ${styles["jobdescription-footer-content"]}`}>
                     <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
                         <h3 style={{marginTop: "0px", marginBottom: "0px"}}>{data ? data.position : ""}</h3>
