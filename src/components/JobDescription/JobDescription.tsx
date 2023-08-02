@@ -124,7 +124,7 @@ export default function JobDescription(){
             <section className={`flex-column justify-center ${styles.jobdescription}`}>
                     <JobHeader />
                     <JobMain />
-                    {windowY >=300 ? <JobFooter />: null}
+                    {windowY >=414 ? <JobFooter />: null}
             </section>
         </>
     )
