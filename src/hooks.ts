@@ -35,7 +35,7 @@ export function useScreenWidth(){
     
     useEffect(() => {
         function handleResize() {
-        setWindowSize(getWindowSize());
+            setWindowSize(getWindowSize());
         }
     
         window.addEventListener("resize", handleResize);
@@ -43,6 +43,27 @@ export function useScreenWidth(){
     }, []);
     
     return windowSize
+}
+
+export function useScreenYOffset(){
+    function getWindowYOffset(){
+        const {scrollY : yOffset } = window;
+        return yOffset
+    }
+
+    const [windowY, setWindowY] = useState(getWindowYOffset());
+
+    useEffect(()=>{
+
+        function handleScroll() {
+            setWindowY(getWindowYOffset());
+        }
+
+        window.addEventListener("scroll",handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    },[])
+
+    return windowY
 }
 
 export function useResultCount(windowWidth : number){
