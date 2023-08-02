@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 
-import { useJob } from "../../hooks";
+import { useJob, useScreenYOffset } from "../../hooks";
 import { JobData } from "../../types";
 import Icon from "../Icon/Icon";
 
@@ -19,6 +19,8 @@ export default function JobDescription(){
     const { jobId } = useParams();
 
     const { data } = useJob(jobId ? jobId : "");
+
+    const windowY = useScreenYOffset();
 
 
     function JobHeader(){
@@ -106,6 +108,7 @@ export default function JobDescription(){
     }
 
     function JobFooter(){
+
         return (
             <>
             <footer className={styles[`jobdescription-footer`]}>
@@ -121,7 +124,7 @@ export default function JobDescription(){
             <section className={`flex-column justify-center ${styles.jobdescription}`}>
                     <JobHeader />
                     <JobMain />
-                    <JobFooter />
+                    {windowY >=300 ? <JobFooter />: null}
             </section>
         </>
     )
