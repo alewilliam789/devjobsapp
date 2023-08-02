@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 
@@ -21,6 +22,10 @@ export default function JobDescription(){
     const { data } = useJob(jobId ? jobId : "");
 
     const windowY = useScreenYOffset();
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
 
     function JobHeader(){
@@ -112,6 +117,13 @@ export default function JobDescription(){
         return (
             <>
             <footer className={styles[`jobdescription-footer`]}>
+                <div className={` flex justify-between align-center ${styles["jobdescription-footer-content"]}`}>
+                    <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
+                        <h3 style={{marginTop: "0px", marginBottom: "0px"}}>{data ? data.position : ""}</h3>
+                        <p>{data ? data.company : ""}</p>
+                    </div>
+                    <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
+                </div>
             </footer>
             </>
         )

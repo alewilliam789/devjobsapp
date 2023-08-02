@@ -66,9 +66,22 @@ ul, ol {
 
 .jobdescription-footer {
     position: fixed;
+    overflow: none;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 96px;
     background-color: white;
+    border-radius: 6px;
+}
+
+.jobdescription-footer-content {
+    position: relative;
+    width: 730px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.jobdescription-footer-content-text {
+    gap: 12px;
 }
