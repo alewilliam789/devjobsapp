@@ -33,10 +33,10 @@ export default function JobDescription(){
     function JobHeader(){
         return (
             <>
-                <header className={`${width <= 768 ? "flex-column":"flex"} justify-start align-center ${styles["jobdescription-header"]}`}>
-                    <Icon iconURL={data ? data.logo : ""} iconType="description" bgColor={data ? data.logoBackground : "white"} iconSize={{width:"81px", height:"max-content"}} 
-                        logoSize={{width:"140px",height:"140px"}} borderRad="0px"/>
-                    <div className={`flex justify-between align-center wrap ${styles["jobdescription-header-company"]}`}>
+                <header className={`${width <= 767 ? "flex-column justify-center":"flex justify-start"} align-center ${styles["jobdescription-header"]}`} style={{height:`${width<=767 ? "205px" : "140px"}`, overflow:`${width<=767 ? "none" : "hidden"}`}}>
+                    <Icon iconURL={data ? data.logo : ""} iconType={`${width<=767 ? "description-mobile" : "description"}`} bgColor={data ? data.logoBackground : "white"} iconSize={width <=767 ? {width:"max-content", height: "max-content" }: {width:"81px", height:"max-content"}} 
+                        logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"}/>
+                    <div className={`${width <= 767 ? "flex-column justify-center":"flex justify-between"} align-center wrap ${styles["jobdescription-header-company"]}`}>
                         <div>
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
@@ -91,10 +91,10 @@ export default function JobDescription(){
                     <header className={`flex justify-between align-center wrap`}>
                         <div className={`flex-column justify-start ${styles["jobdescription-main-header"]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
-                            {width >= 768 ? <h2>{data ? data.position : ""}</h2> : <h3>{data ? data.position : ""}</h3>}
+                            {width >= 767 ? <h2>{data ? data.position : ""}</h2> : <h3>{data ? data.position : ""}</h3>}
                             <h4 className="location-text">{data ? data.location : ""}</h4>
                         </div>
-                        <Button buttonType="button" placeholderText="Apply Now" size={width>=768 ? undefined : {width:"279px",height:"48px"}}handleClick={()=>{}} />
+                        <Button buttonType="button" placeholderText="Apply Now" size={width>=767 ? undefined : {width:"279px",height:"48px"}}handleClick={()=>{}} />
                     </header>
                     <p>
                         {data ? data.description : ""}
@@ -119,12 +119,12 @@ export default function JobDescription(){
         return (
             <>
             <footer className={` flex justify-center ${styles[`jobdescription-footer`]}`}>
-                <div className={` flex ${width>= 768 ? "justify-between" : "justify-center"} align-center ${styles["jobdescription-footer-content"]}`}>
-                    { width >= 768 ? <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
+                <div className={` flex ${width>= 767 ? "justify-between" : "justify-center"} align-center ${styles["jobdescription-footer-content"]}`}>
+                    { width >= 767 ? <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
                         <h3 style={{marginTop: "0px", marginBottom: "0px"}}>{data ? data.position : ""}</h3>
                         <p>{data ? data.company : ""}</p>
                     </div> : null}
-                    <Button buttonType="button" placeholderText="Apply Now" size={width>=768 ? undefined : {width:"327px",height:"48px"}} handleClick={()=>{}} />
+                    <Button buttonType="button" placeholderText="Apply Now" size={width>=767 ? undefined : {width:"327px",height:"48px"}} handleClick={()=>{}} />
                 </div>
             </footer>
             </>
