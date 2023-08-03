@@ -1,4 +1,7 @@
-
+h1, h2, h3, h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
 .jobdescription {
     color: inherit;
@@ -29,6 +32,10 @@
     background-color: white;
     border-radius: 6px;
     gap: 40px;
+}
+
+.jobdescription-main > header {
+    height: max-content;
 }
 
 .jobdescription-main-header {
@@ -111,6 +118,10 @@ ul, ol {
 @media screen and (max-width: 767px){
     .jobdescription {
         width: 327px;
+    }
+
+    .jobdescription-main > header {
+        gap: 50px;
     }
 
     .jobdescription-footer-content {

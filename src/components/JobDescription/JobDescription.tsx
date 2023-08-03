@@ -33,10 +33,10 @@ export default function JobDescription(){
     function JobHeader(){
         return (
             <>
-                <header className={`flex justify-start align-center ${styles["jobdescription-header"]}`}>
+                <header className={`${width <= 768 ? "flex-column":"flex"} justify-start align-center ${styles["jobdescription-header"]}`}>
                     <Icon iconURL={data ? data.logo : ""} iconType="description" bgColor={data ? data.logoBackground : "white"} iconSize={{width:"81px", height:"max-content"}} 
                         logoSize={{width:"140px",height:"140px"}} borderRad="0px"/>
-                    <div className={`flex justify-between align-center ${styles["jobdescription-header-company"]}`}>
+                    <div className={`flex justify-between align-center wrap ${styles["jobdescription-header-company"]}`}>
                         <div>
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
@@ -88,13 +88,13 @@ export default function JobDescription(){
         return (
             <>
                 <main className={`flex-column ${styles["jobdescription-main"]}`}>
-                    <header className={`flex justify-between align-center`} style={{height: "87px"}}>
+                    <header className={`flex justify-between align-center wrap`}>
                         <div className={`flex-column justify-start ${styles["jobdescription-main-header"]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
-                            <h2>{data ? data.position : ""}</h2>
+                            {width >= 768 ? <h2>{data ? data.position : ""}</h2> : <h3>{data ? data.position : ""}</h3>}
                             <h4 className="location-text">{data ? data.location : ""}</h4>
                         </div>
-                        <Button buttonType="button" placeholderText="Apply Now" handleClick={()=>{}} />
+                        <Button buttonType="button" placeholderText="Apply Now" size={width>=768 ? undefined : {width:"279px",height:"48px"}}handleClick={()=>{}} />
                     </header>
                     <p>
                         {data ? data.description : ""}
