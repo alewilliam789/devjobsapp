@@ -9,7 +9,7 @@ h4 {
   color: #5964E0;
 }
 
-p {
+p, li {
   color: #6E8098;
 }
 
@@ -25,8 +25,17 @@ p {
   z-index: 0;
   height: 100%;
   width: 100%;
+}
+
+.app.day {
   background-color: #F2F2F2;
 }
+
+.app.night {
+  background-color: #121721;
+}
+
+
 
 .blur {
   filter: blur(2px) brightness(0.6)

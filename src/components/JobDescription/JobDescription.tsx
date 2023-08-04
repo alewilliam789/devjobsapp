@@ -8,6 +8,7 @@ import Icon from "../Icon/Icon";
 
 import styles from './styles.module.css';
 import Button from "../Button/Button";
+import { useThemeContext } from "../../context/ThemeContext";
 
 
 
@@ -24,6 +25,8 @@ export default function JobDescription(){
 
     const { width }  = useScreenWidth();
 
+    const { theme } = useThemeContext();
+
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
@@ -32,7 +35,7 @@ export default function JobDescription(){
     function JobHeader(){
         return (
             <>
-                <header className={`${width <= 767 ? "flex-column justify-center":"flex justify-start"} align-center ${styles["jobdescription-header"]}`} style={{height:`${width<=767 ? "205px" : "140px"}`, overflow:`${width<=767 ? "none" : "hidden"}`}}>
+                <header className={`${width <= 767 ? "flex-column justify-center":"flex justify-start"} align-center ${styles["jobdescription-header"]} ${styles[`${theme}`]}`} style={{height:`${width<=767 ? "205px" : "140px"}`, overflow:`${width<=767 ? "none" : "hidden"}`}}>
                     <Icon iconURL={data ? data.logo : ""} iconType={`${width<=767 ? "description-mobile" : "description"}`} bgColor={data ? data.logoBackground : "white"} iconSize={width <=767 ? {width:"max-content", height: "max-content" }: {width:"81px", height:"max-content"}} 
                         logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"}/>
                     <div className={`${width <= 767 ? "flex-column justify-center":"flex justify-between"} align-center wrap ${styles["jobdescription-header-company"]}`}>
@@ -40,7 +43,7 @@ export default function JobDescription(){
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
                         </div>
-                        <Button buttonType="button" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} bgColor="#F4F6F8" textColor="#5964E0"/>
+                        <Button buttonType="button" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} bgColor={theme == 'day' ? "#EEEFFC" : "#313642"} textColor={theme == 'day' ? "#5964E0" : "white"}/>
                     </div>
                 </header>
             </>
@@ -86,9 +89,9 @@ export default function JobDescription(){
     
         return (
             <>
-                <main className={`flex-column ${styles["jobdescription-main"]}`}>
+                <main className={`flex-column ${styles["jobdescription-main"]} ${styles[`${theme}`]}`}>
                     <header className={`flex justify-between align-center wrap`}>
-                        <div className={`flex-column justify-start ${styles["jobdescription-main-header"]}`}>
+                        <div className={`flex-column justify-start ${styles["jobdescription-main-header"]} ${styles[`${theme}`]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
                             {width >= 767 ? <h2>{data ? data.position : ""}</h2> : <h3>{data ? data.position : ""}</h3>}
                             <h4 className="location-text">{data ? data.location : ""}</h4>
@@ -101,12 +104,12 @@ export default function JobDescription(){
                     <section className={`flex-column ${styles["jobdescription-main-requirements"]}`}>
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
-                        <ul className="flex-column justify-start">{liList({firstId:"requirements"})}</ul>
+                        <ul className={`flex-column justify-start ${styles[`${theme}`]}`}>{liList({firstId:"requirements"})}</ul>
                     </section>
                     <section>
                         <h3 style={{marginBottom:"23px"}}>What You Will Do</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.role.content : ""}</p>
-                        <ol className="flex-column justify-start">{liList({firstId:"role"})}</ol>
+                        <ol className={`flex-column justify-start ${styles[`${theme}`]}`}>{liList({firstId:"role"})}</ol>
                     </section>
                 </main>
             </>
@@ -117,7 +120,7 @@ export default function JobDescription(){
 
         return (
             <>
-            <footer className={` flex justify-center ${styles[`jobdescription-footer`]}`}>
+            <footer className={` flex justify-center ${styles[`jobdescription-footer`]} ${styles[`${theme}`]}`}>
                 <div className={` flex ${width>= 767 ? "justify-between" : "justify-center"} align-center ${styles["jobdescription-footer-content"]}`}>
                     { width >= 767 ? <div className={`flex-column ${styles["jobdescription-footer-content-text"]}`}>
                         <h3 style={{marginTop: "0px", marginBottom: "0px"}}>{data ? data.position : ""}</h3>

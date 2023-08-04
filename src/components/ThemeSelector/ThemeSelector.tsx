@@ -4,12 +4,15 @@ import {ReactComponent as LightMode} from '../../assets/desktop/icon-sun.svg';
 import {ReactComponent as DarkMode} from '../../assets/desktop/icon-moon.svg';
 
 import styles from './styles.module.css';
+import { useThemeContext } from '../../context/ThemeContext';
 
 
 
 export default function ThemeSelector(){
 
     const [toggle, setToggle] = useState<boolean| null>(null)
+
+    const { setTheme } = useThemeContext();
 
 
     function handleClick(){
@@ -18,6 +21,14 @@ export default function ThemeSelector(){
                 true
             }
             return !prevState
+        })
+        setTheme((prevState)=>{
+            if(prevState == "day"){
+                return "night"
+            }
+            else {
+                return "day"
+            }
         })
     };
 

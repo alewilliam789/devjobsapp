@@ -21,7 +21,6 @@ p {
     z-index: 0;
     height: 230px;
     width: 100%;
-    background-color: white;
     border-radius: 6px;
 }
 
@@ -34,6 +33,17 @@ p {
 .jobcard-location {
     margin-top: 40px;
 }
+
+.day {
+    color: #19202D;
+    background-color: white;
+}
+
+.night {
+    color: white;
+    background-color: #19202D;
+}
+
 
  div > div > p {
     color: #9DAEC2;

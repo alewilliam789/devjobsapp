@@ -12,6 +12,7 @@ import JobDescription from './components/JobDescription/JobDescription.tsx';
 
 
 import './index.css';
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 
 const router = createBrowserRouter([
@@ -54,7 +55,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <PersistQueryClientProvider
       client={queryClient}
       persistOptions={{persister}}>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </PersistQueryClientProvider>
   </React.StrictMode>,
 )
