@@ -9,6 +9,20 @@
     border-radius: 6px;
 }
 
-.button:hover {
+.button-1 {
+    color: white;
+    background-color: #5964E0;
+}
+
+.button-1:hover {
     background-color: #939BF4;
+}
+
+.button-2 {
+    color: #5964E0;
+    background-color: #EEEFC;
+}
+
+.button-2:hover {
+    background-color: #C6C9F6;
 }
