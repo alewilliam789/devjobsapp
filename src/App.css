@@ -62,6 +62,10 @@ html, body {
   align-items: center;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .app-content {
   padding: 4.5% 0%;
   transition: all 1s ease;
