@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 
 
 import { useJob, useScreenWidth, useScreenYOffset } from "../../hooks";
+import { useThemeContext } from "../../context/ThemeContext";
+
 import Icon from "../Icon/Icon";
+import Button from "../Button/Button";
 
 
 import styles from './styles.module.css';
-import Button from "../Button/Button";
-import { useThemeContext } from "../../context/ThemeContext";
 
 
 
