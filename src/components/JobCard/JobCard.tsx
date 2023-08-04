@@ -1,8 +1,12 @@
-import styles from './styles.module.css';
+import { useThemeContext } from '../../context/ThemeContext';
+
+import { JobData } from '../../types';
 
 import Icon from '../Icon/Icon';
-import { JobData } from '../../types';
-import { useThemeContext } from '../../context/ThemeContext';
+
+
+import styles from './styles.module.css';
+
 
 interface JobCardProps {
     job : JobData
