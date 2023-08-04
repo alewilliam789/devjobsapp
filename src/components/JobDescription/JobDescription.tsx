@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 
 import { useJob, useScreenWidth, useScreenYOffset } from "../../hooks";
-import { JobData } from "../../types";
 import Icon from "../Icon/Icon";
 
 
