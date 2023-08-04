@@ -41,7 +41,7 @@ export default function JobDescription(){
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
                         </div>
-                        <Button buttonType="button" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} />
+                        <Button buttonType="button" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} bgColor="#F4F6F8" textColor="#5964E0"/>
                     </div>
                 </header>
             </>
@@ -94,7 +94,7 @@ export default function JobDescription(){
                             {width >= 767 ? <h2>{data ? data.position : ""}</h2> : <h3>{data ? data.position : ""}</h3>}
                             <h4 className="location-text">{data ? data.location : ""}</h4>
                         </div>
-                        <Button buttonType="button" placeholderText="Apply Now" size={width>=767 ? undefined : {width:"279px",height:"48px"}}handleClick={()=>{}} />
+                        <Button buttonType="button" placeholderText="Apply Now" size={width>=767 ? undefined : {width:"279px",height:"48px"}} handleClick={()=>{}}/>
                     </header>
                     <p>
                         {data ? data.description : ""}
