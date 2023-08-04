@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 
 import App from './App.tsx';
@@ -12,7 +13,7 @@ import JobDescription from './components/JobDescription/JobDescription.tsx';
 
 
 import './index.css';
-import { ThemeProvider } from './context/ThemeContext.tsx';
+
 
 
 const router = createBrowserRouter([
