@@ -25,13 +25,13 @@
   }
   
   
-@media (max-width: 1439px) and (min-width:768px){
+@media (max-width: 1439px) and (min-width:767px){
     .header-content {
       width: 689px;
     }
   }
   
-@media (max-width: 768px){
+@media (max-width: 767px){
     .header-content {
       width: 327px;
     }
