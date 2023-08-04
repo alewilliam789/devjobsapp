@@ -20,19 +20,19 @@
 
 @media (min-width:1440px){
     .header-content {
-      margin: 0px 11.4%;
+      width: 1110px;
     }
   }
   
   
-@media (max-width: 1439px) and (min-width:768px){
+@media (max-width: 1439px) and (min-width:767px){
     .header-content {
-      margin: 0px 5%;
+      width: 698px;
     }
   }
   
-@media (max-width: 768px){
+@media (max-width: 767px){
     .header-content {
-      margin: 0px 6.4%;
+      width: 327px;
     }
   }

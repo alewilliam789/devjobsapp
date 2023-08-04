@@ -7,7 +7,6 @@
 .jobs-cardlist {
   align-self: center;
   padding: 0px;
-  width: 100%;
   display: grid;
   grid-template-rows: repeat( auto-fill, 253px);
   justify-content: space-between;
@@ -22,19 +21,22 @@
 
 @media (min-width:1440px){
   .jobs-cardlist {
+    width: 1110px;
     grid-template-columns: repeat(auto-fill,350px);
   }
 }
 
-@media (max-width: 1439px) and (min-width:768px){
+@media (max-width: 1439px) and (min-width:767px){
   .jobs-cardlist {
+    width: 689px;
     grid-template-columns: repeat(auto-fill,339px);
   }
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
   .jobs-cardlist {
+    width: 327px;
     grid-template-columns: repeat(auto-fill,327px);
   }
     section > .jobs-cardlist {

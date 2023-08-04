@@ -66,7 +66,7 @@
     accent-color: #5964E0;
 }
 
-@media (min-width: 762px){
+@media (min-width: 767px){
     .searchbar {
         grid-template-columns: auto auto 35%;
     }
@@ -78,7 +78,7 @@
   }
   
   
-  @media screen and (max-width: 762px){
+  @media screen and (max-width: 767px){
     .searchbar {
         grid-template-columns: auto 125px;
     }
