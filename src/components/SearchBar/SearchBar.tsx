@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 
 
 import { useScreenWidth } from '../../hooks';
+import { useThemeContext } from '../../context/ThemeContext';
 
 
 import styles from './styles.module.css';
@@ -22,6 +23,8 @@ import { useState } from 'react';
 export default function SearchBar(){
 
     const { width } = useScreenWidth();
+
+    const { theme } = useThemeContext();
 
     const [hidden, setHidden] = useState(false);
     
@@ -59,11 +62,11 @@ export default function SearchBar(){
         function SearchBarSwitcher(){
 
 
-            if(width <= 767){
+            if(width <= 762){
                 return (
                     <>
                         <div className={`flex align-center justify-center ${styles["searchbar-search"]}`}>
-                            <FilterIcon fill='#6E8098' onClick={()=>{setHidden((prevState)=>{return !prevState})}}/>
+                            <FilterIcon fill={theme =='day' ? '#6E8098' : "white"} onClick={()=>{setHidden((prevState)=>{return !prevState})}}/>
                             <Button buttonType='submit' handleClick={undefined} placeholderText={undefined} size={{width:"45px",height:"45px"}}>
                                     <SearchIcon fill='#FFFFFF'/>
                             </Button>
@@ -89,10 +92,10 @@ export default function SearchBar(){
                 {(hidden && width < 767) && (
                             <div style={{position:'absolute',top:'0px', left:'-25%', zIndex: 2, height: '100%', width: '150%', backdropFilter:"blur(2px) brightness(60%)"}}>
                                 <div className='flex justify-center' style={{marginTop:"227px"}}>
-                                    <div style={{overflow:"hidden", width:"327px", height: "217px", backgroundColor:'white', borderRadius: "6px"}}>
-                                        <div className="flex-column justify-evenly" style={{height: "100%", width: "100%", paddingLeft:"16px"}}>
-                                            <div style={{width:"100%", marginLeft:"-15px", paddingLeft: "10px",marginTop:"-30px", borderBottom:"1px solid #F4F8F6"}}>
-                                            <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} placeholder="Filter by location..." />
+                                    <div style={{overflow:"hidden", width:"327px", height: "217px", borderRadius: "6px"}}>
+                                        <div className={`flex-column justify-evenly ${styles[`${theme}`]}`} style={{height: "100%", width: "100%", paddingLeft:"16px"}}>
+                                            <div style={{width:"100%", marginLeft:"-15px", paddingLeft: "10px",marginTop:"-30px", borderBottom:"1px solid", borderColor:`${theme == 'day' ? '#F4F8F6' : '#6E8098'}`}}>
+                                            <SearchInput register={register} searchParam={"jobLocation"}  Icon={LocationIcon} placeholder="Filter by location..."/>
                                             </div>
                                             <FullTimeCheckbox />
                                             <Button buttonType='submit' handleClick={handleSubmit(onSubmit)} placeholderText='Search' size={{width:"279px",height:"48px"}} />
@@ -101,7 +104,7 @@ export default function SearchBar(){
                                 </div>
                             </div>
                         )}
-                <form id='job' className={`${styles['searchbar']}`} onSubmit={handleSubmit(onSubmit)}>
+                <form className={`${styles['searchbar']} ${styles[`${theme}`]}`} onSubmit={handleSubmit(onSubmit)}>
                     <div>
                     <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 767) ? SearchIcon : null} placeholder="Enter desired job..." />
                     </div>

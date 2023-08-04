@@ -4,8 +4,6 @@ h1, h2, h3, h4 {
 }
 
 .jobdescription {
-    color: inherit;
-    background-color: inherit;
     width: 730px;
     margin: -10px auto;
     gap: 32px;
@@ -15,7 +13,6 @@ h1, h2, h3, h4 {
 .jobdescription-header {
     width: 100%;
     height: max-content;
-    background-color: white;
     border-radius: 6px;
 }
 
@@ -29,7 +26,6 @@ h1, h2, h3, h4 {
 .jobdescription-main {
     height: max-content;
     padding: 48px;
-    background-color: white;
     border-radius: 6px;
     gap: 40px;
 }
@@ -54,6 +50,7 @@ ul, ol {
     padding: 0px;
     gap: 8px;
 }
+
 
 .jobdescription-li-bullet:before {
     content: "\2022";
@@ -91,6 +88,16 @@ ul, ol {
 
 .jobdescription-footer-content-text {
     gap: 12px;
+}
+
+.day {
+    color: #19202D;
+    background-color: white;
+}
+
+.night {
+    color: white;
+    background-color: #19202D;
 }
 
 @media (min-width:1440px){

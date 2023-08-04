@@ -2,7 +2,6 @@
     gap: 15px;
     width: 100%;
     padding: 25px 6px;
-    border-right: solid 0.25px #F4F6F8;
 }
 
 
@@ -11,9 +10,28 @@
     font-family: 'Kumbh Sans', sans-serif;
     width: 75%;
     height: 100%;
-
+    color: inherit;
+    background-color: inherit;
 }
 
 .searchinput-box:focus {
     outline: none;
+}
+
+.day {
+    color: #19202D;
+    background-color: white;
+}
+
+.searchinput-container.day {
+    border-right: solid 0.25px #F4F6F8;
+}
+
+.night {
+    color: white;
+    background-color: #19202D;
+}
+
+.searchinput-container.night {
+    border-right: solid 0.25px #6E8098;
 }

@@ -1,7 +1,6 @@
 .searchbar {
     display: grid;
     width: 100%;
-    background-color: white;
     border-radius: 6px;
     padding: 0px 0px;
     gap: 1.7%;
@@ -64,6 +63,16 @@
 
 .searchbar-checkbox:checked {
     accent-color: #5964E0;
+}
+
+.day {
+    color: #19202D;
+    background-color: white;
+}
+
+.night {
+    color: white;
+    background-color: #19202D;
 }
 
 @media (min-width: 767px){
