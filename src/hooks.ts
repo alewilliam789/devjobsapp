@@ -1,8 +1,8 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
-import {useQuery} from '@tanstack/react-query';
+import {QueryClient, useQuery} from '@tanstack/react-query';
 
 
-import fetchJobs from './API';
+import { fetchJob, fetchJobs } from './API';
 
 
 import { JobData } from './types';
@@ -18,6 +18,10 @@ export function useJobs(){
     return useQuery<JobData[], Error>(['job'],()=>fetchJobs())
 }
 
+export function useJob(jobId : string){
+        return useQuery<JobData, Error>(['job',{id:jobId}],()=>fetchJob(jobId))
+}
+
 export function useScreenWidth(){
     function getWindowSize() {
         const { innerWidth: width, innerHeight: height} = window;
@@ -31,7 +35,7 @@ export function useScreenWidth(){
     
     useEffect(() => {
         function handleResize() {
-        setWindowSize(getWindowSize());
+            setWindowSize(getWindowSize());
         }
     
         window.addEventListener("resize", handleResize);
@@ -39,6 +43,27 @@ export function useScreenWidth(){
     }, []);
     
     return windowSize
+}
+
+export function useScreenYOffset(){
+    function getWindowYOffset(){
+        const {scrollY : yOffset } = window;
+        return yOffset
+    }
+
+    const [windowY, setWindowY] = useState(getWindowYOffset());
+
+    useEffect(()=>{
+
+        function handleScroll() {
+            setWindowY(getWindowYOffset());
+        }
+
+        window.addEventListener("scroll",handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    },[])
+
+    return windowY
 }
 
 export function useResultCount(windowWidth : number){

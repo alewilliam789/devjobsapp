@@ -8,6 +8,7 @@ import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persist
 
 import App from './App.tsx';
 import Jobs from './components/Jobs/Jobs.tsx';
+import JobDescription from './components/JobDescription/JobDescription.tsx';
 
 
 import './index.css';
@@ -16,7 +17,7 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (<App />),
+    element: <App />,
     children: [
       {
         index: true,
@@ -24,11 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "jobs/:jobId",
-        element: (
-          <>
-            <div>Here's a job</div>
-          </>
-        )
+        element: <JobDescription />
         
       }
     ]

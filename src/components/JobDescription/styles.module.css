@@ -1,0 +1,139 @@
+h1, h2, h3, h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.jobdescription {
+    color: inherit;
+    background-color: inherit;
+    width: 730px;
+    margin: -10px auto;
+    gap: 32px;
+}
+
+
+.jobdescription-header {
+    width: 100%;
+    height: max-content;
+    background-color: white;
+    border-radius: 6px;
+}
+
+
+.jobdescription-header-company {
+    width: 69%;
+    margin: 0px 40px;
+    gap:12px;
+}
+
+.jobdescription-main {
+    height: max-content;
+    padding: 48px;
+    background-color: white;
+    border-radius: 6px;
+    gap: 40px;
+}
+
+.jobdescription-main > header {
+    height: max-content;
+}
+
+.jobdescription-main-header {
+    gap: 8px;
+
+}
+
+.jobdescription-main-header > :is(p,h2,h4){
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    gap: 8px;
+}
+
+.jobdescription-li-bullet:before {
+    content: "\2022";
+    color: #5964E0;
+    font-weight: bold;
+    width: 4px;
+    vertical-align: middle;
+    padding-right: 32px;
+}
+
+.jobdescription-li-number {
+    color: #5964E0;
+    font-weight: bold;
+    width: 4px;
+    vertical-align: middle;
+    padding-right: 32px;
+}
+
+.jobdescription-footer {
+    position: fixed;
+    overflow: none;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 96px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.jobdescription-footer-content {
+    position: relative;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.jobdescription-footer-content-text {
+    gap: 12px;
+}
+
+@media (min-width:1440px){
+    .jobdescription {
+     
+     width: 730px;
+    }
+
+    .jobdescription-footer-content {
+        width: 730px;
+    }
+  }
+  
+@media (max-width: 1439px) and (min-width:767px){
+    .jobdescription {
+        width: 689px;
+    }
+
+    .jobdescription-footer-content {
+        width: 689px;
+    }
+}
+  
+  
+@media screen and (max-width: 767px){
+    .jobdescription {
+        width: 327px;
+    }
+
+    .jobdescription-header {
+        gap:25px;
+    }
+
+    .jobdescription-header-company {
+        text-align: center;
+        gap: 25px;
+    }
+
+    .jobdescription-main > header {
+        gap: 50px;
+    }
+
+    .jobdescription-footer-content {
+        width: 327px;
+    }
+}

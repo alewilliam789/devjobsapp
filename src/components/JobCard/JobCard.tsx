@@ -13,7 +13,7 @@ export default function JobCard({job}: JobCardProps){
     return (
         <>
         <div id="jobcard" className={styles.jobcard}>
-            <Icon iconURL={job.logo} bgColor={job.logoBackground}/>
+            <Icon iconURL={job.logo} iconType="card" bgColor={job.logoBackground} iconSize={{height:"max-content",width:"max-content"}} logoSize={{width:"50px", height:"50px"}} borderRad='15px'/>
             <main className={` ${styles["jobcard-body"]}`}>
                 <div className={`${styles["jobcard-text"]}`}>
                     <p>{job.postedAt} • {job.contract}</p>
