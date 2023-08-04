@@ -5,6 +5,10 @@ html, body {
   width: 100%;
 }
 
+h4 {
+  color: #5964E0;
+}
+
 #root{
   height: 100%;
   width: 100%;

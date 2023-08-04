@@ -55,7 +55,7 @@ export default function JobDescription(){
     }
 
 
-    function CustomLi ({index, bullet, item}: CustomLiProps) {
+    function CustomLi ({bullet, item}: CustomLiProps) {
         return(
             <li className="flex align-start"><div className={bullet ? styles["jobdescription-li-number"] : styles["jobdescription-li-bullet"]}>{bullet ? bullet: null}</div>{item}</li>
         )
