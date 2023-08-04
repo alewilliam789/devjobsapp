@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
 
+import { useThemeContext } from '../../context/ThemeContext';
+
 import {ReactComponent as LightMode} from '../../assets/desktop/icon-sun.svg';
 import {ReactComponent as DarkMode} from '../../assets/desktop/icon-moon.svg';
 
 import styles from './styles.module.css';
-import { useThemeContext } from '../../context/ThemeContext';
+
 
 
 
