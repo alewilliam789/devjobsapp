@@ -8,7 +8,7 @@
     background-size: 100% 100%;
 }
 .header-content {
-    width: 100%;
+    margin: 0px auto;
     transition: all 1s ease;
     padding-bottom: 41px;
 }
@@ -20,19 +20,19 @@
 
 @media (min-width:1440px){
     .header-content {
-      margin: 0px 11.4%;
+      width: 1110px;
     }
   }
   
   
 @media (max-width: 1439px) and (min-width:768px){
     .header-content {
-      margin: 0px 5%;
+      width: 689px;
     }
   }
   
 @media (max-width: 768px){
     .header-content {
-      margin: 0px 6.4%;
+      width: 327px;
     }
   }
