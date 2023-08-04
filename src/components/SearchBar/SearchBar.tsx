@@ -89,7 +89,7 @@ export default function SearchBar(){
 
         return (
             <>
-                {(hidden && width < 762) && (
+                {(hidden && width < 767) && (
                             <div style={{position:'absolute',top:'0px', left:'-25%', zIndex: 2, height: '100%', width: '150%', backdropFilter:"blur(2px) brightness(60%)"}}>
                                 <div className='flex justify-center' style={{marginTop:"227px"}}>
                                     <div style={{overflow:"hidden", width:"327px", height: "217px", borderRadius: "6px"}}>
@@ -106,7 +106,7 @@ export default function SearchBar(){
                         )}
                 <form className={`${styles['searchbar']} ${styles[`${theme}`]}`} onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 762) ? SearchIcon : null} placeholder="Enter desired job..." />
+                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 767) ? SearchIcon : null} placeholder="Enter desired job..." />
                     </div>
                     <SearchBarSwitcher />
                 </form>
