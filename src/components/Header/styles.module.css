@@ -8,7 +8,7 @@
     background-size: 100% 100%;
 }
 .header-content {
-    width: 100%;
+    margin: 0px auto;
     transition: all 1s ease;
     padding-bottom: 41px;
 }
@@ -27,7 +27,7 @@
   
 @media (max-width: 1439px) and (min-width:767px){
     .header-content {
-      width: 698px;
+      width: 689px;
     }
   }
   
