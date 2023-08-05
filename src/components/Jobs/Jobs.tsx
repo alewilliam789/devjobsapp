@@ -1,6 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
 import { useQueryClient } from "@tanstack/react-query";
-import { Link } from 'react-router-dom';
 
 
 import JobCard from "../JobCard/JobCard";
@@ -43,11 +41,9 @@ export default function Jobs(){
         queryClient.setQueryData(['job',{id: job.id}], job)
             if(index <= resultCount-1){
                 return(
-                    <Link to={`jobs/${job.id}`} style={{color:'inherit'}} key={job.id}>
-                    <li className={styles['jobs-card']}>
-                        <JobCard job={job} />
+                    <li key={job.id} className={styles['jobs-card']}>
+                            <JobCard job={job} />
                     </li>
-                    </Link>
                 )
             }
     })
