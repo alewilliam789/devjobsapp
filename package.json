@@ -7,16 +7,22 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy" : "git-directory-deploy --directory dist --branch frontend"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",
+    "git-directory-deploy": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@tanstack/query-sync-storage-persister": "^4.29.19",
     "@tanstack/react-query-persist-client": "^4.29.19",
+    "@types/babel__core": "^7.20.1",
+    "@types/babel__template": "^7.4.1",
+    "@types/babel-types": "^7.0.11",
+    "@types/node": "^20.4.8",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
@@ -25,8 +31,10 @@
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "prettier": "^3.0.1",
     "react-hook-form": "^7.45.1",
     "react-router-dom": "^6.14.1",
+    "svgo": "^3.0.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-svgr": "^3.2.0"
