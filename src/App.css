@@ -112,20 +112,13 @@ p, li {
 
 }
 
-@media (min-width: 1857px){
-  body {
-    height: 1350px;
-  }
-}
-
-
-@media (min-width: 1155px){
+@media (min-width: 1439px){
   body {
     height: 1850px;
   }
 }
 
-@media (max-width: 1155px) and (min-width:762px){
+@media (max-width: 1439px) and (min-width:767px){
   body {
     height: 2750px;
   }
