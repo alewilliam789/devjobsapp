@@ -1,10 +1,10 @@
-import {ReactNode, createContext, useContext, useState} from 'react';
+import {ReactNode, createContext, useContext, useEffect, useState} from 'react';
 
 
 
 interface ThemeContextProps {
-    theme: "day" | "night";
-    setTheme : React.Dispatch<React.SetStateAction<"day" | "night">>
+    theme: string;
+    setTheme : React.Dispatch<React.SetStateAction<string>>
 }
 
 
@@ -18,7 +18,7 @@ type ProviderProps = {
 
 export const ThemeProvider = ({ children }: ProviderProps) => {
 
-    const [theme,setTheme] = useState<"day" | "night">('day');
+    const [theme,setTheme] = useState<string>(localStorage.getItem("theme") || "day");
 
     return <ThemeContext.Provider value={{theme,setTheme}}>{children}
                 </ThemeContext.Provider>
