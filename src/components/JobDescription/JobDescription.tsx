@@ -44,7 +44,7 @@ export default function JobDescription(){
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
                         </div>
-                        <Button buttonType="button" buttonStyles="button-2" placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} />
+                        <Button buttonType="button" buttonStyles={theme == "day" ? "button-2-day" : "button-2-night"} placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} />
                     </div>
                 </header>
             </>

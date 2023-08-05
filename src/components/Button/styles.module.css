@@ -18,11 +18,20 @@
     background-color: #939BF4;
 }
 
-.button-2 {
+.button-2-day {
     color: #5964E0;
     background-color: #EEEFC;
 }
 
-.button-2:hover {
+.button-2-day:hover {
     background-color: #C6C9F6;
+}
+
+.button-2-night {
+    color: white;
+    background-color: #313642;
+}
+
+.button-2-night:hover {
+    background-color: #6A6E76;
 }
