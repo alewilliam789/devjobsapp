@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useThemeContext } from '../../context/ThemeContext';
 
 import { JobData } from '../../types';
@@ -23,6 +25,7 @@ export default function JobCard({job}: JobCardProps){
         <>
         <div className={styles.jobcard}>
             <Icon iconURL={job.logo} iconType="card" bgColor={job.logoBackground} iconSize={{height:"max-content",width:"max-content"}} logoSize={{width:"50px", height:"50px"}} borderRad='15px'/>
+            <Link to={`jobs/${job.id}`} style={{color:'inherit'}}>
             <main className={` ${styles["jobcard-body"]} ${styles[`${theme}`]}`}>
                 <div className={`${styles["jobcard-text"]}`}>
                     <p>{job.postedAt} • {job.contract}</p>
@@ -31,6 +34,7 @@ export default function JobCard({job}: JobCardProps){
                     <h4 className={styles["jobcard-location"]}>{job.location}</h4>
                 </div>
             </main>
+            </Link>
         </div>
         </>
     )
