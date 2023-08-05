@@ -14,21 +14,26 @@ export default function ThemeSelector(){
 
     const [toggle, setToggle] = useState<boolean| null>(null)
 
-    const { setTheme } = useThemeContext();
+    const { theme, setTheme } = useThemeContext();
 
 
     function handleClick(){
         setToggle((prevState)=>{
             if(prevState == null){
-                true
+                return (theme == "day" ? false : true)
             }
-            return !prevState
+            else if(theme == "day"){
+                return false
+            }
+            return true
         })
         setTheme((prevState)=>{
             if(prevState == "day"){
+                localStorage.setItem("theme",`night`)
                 return "night"
             }
             else {
+                localStorage.setItem("theme",`day`)
                 return "day"
             }
         })
@@ -39,8 +44,8 @@ export default function ThemeSelector(){
         <>
         <div className={`flex align-center ${styles['themeselector-container']}`}>
             <LightMode />
-            <div className={`flex ${toggle || toggle ? "justify-end" : "justify-start"} ${styles['themeselector-base']}`} onClick={handleClick}>
-                <div className={`animate__animated ${toggle ? "animate__slideInLeft" : (toggle != null && "animate__slideInRight")} animate__faster ${styles['themeselector-circle']}`}></div>
+            <div className={`flex ${theme == "day" ? "justify-start" : "justify-end"} ${styles['themeselector-base']}`} onClick={handleClick}>
+                <div className={`animate__animated ${theme =="night" ? (toggle != null && "animate__slideInLeft") : (toggle != null && "animate__slideInRight")} animate__faster ${styles['themeselector-circle']}`}></div>
             </div>
             <DarkMode />
         </div>
