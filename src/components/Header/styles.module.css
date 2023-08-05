@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: 160px;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 .header-content {
     margin: 0px auto;
@@ -19,6 +19,11 @@
 }
 
 @media (min-width:1440px){
+
+    .header {
+      height: 160px;
+    }
+
     .header-content {
       width: 1110px;
     }
@@ -26,12 +31,23 @@
   
   
 @media (max-width: 1439px) and (min-width:767px){
+
+    .header {
+      height: 160px;
+    }
+
     .header-content {
       width: 689px;
     }
   }
   
 @media (max-width: 767px){
+
+    .header {
+      height: 136px;
+      background-position: -100px 0px;
+    }
+
     .header-content {
       width: 327px;
     }
