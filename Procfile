@@ -1,1 +1,1 @@
-web: vite
+web: vite preview --port 5173
