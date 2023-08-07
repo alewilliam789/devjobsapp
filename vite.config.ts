@@ -10,6 +10,6 @@ export default defineConfig({
   server : {
     host: true,
     strictPort: true,
-    port: Number(process.env.PORT)
+    port: 5173
   }
 })

@@ -90,7 +90,7 @@ export default function SearchBar(){
         return (
             <>
                 {(hidden && width < 767) && (
-                            <div style={{position:'absolute',top:'0px', left:'-25%', zIndex: 2, height: '100%', width: '150%', backdropFilter:"blur(2px) brightness(60%)"}}>
+                            <div style={{position:'absolute',top:'0px', left:'-25%', zIndex: 2, height: '100%', width: '150%', backgroundColor: "rgb(0,0,0,.5)"}}>
                                 <div className='flex justify-center' style={{marginTop:"227px"}}>
                                     <div style={{overflow:"hidden", width:"327px", height: "217px", borderRadius: "6px"}}>
                                         <div className={`flex-column justify-evenly ${styles[`${theme}`]}`} style={{height: "100%", width: "100%", paddingLeft:"16px"}}>
