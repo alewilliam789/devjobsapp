@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 
 import { useJobs, useScreenWidth, useResultCount } from "../../hooks";
+import { useJobContext } from "../../context/JobsContext";
 
 import { JobData } from "../../types";
 
@@ -16,9 +17,13 @@ import Button from '../Button/Button';
 
 
 
-function isUndefined(data : JobData[] | undefined){
-    if(typeof data != "undefined"){
+function isUndefined(data : JobData[] | undefined, hits : JobData[] | null){
+    if(typeof data != "undefined" && hits == null){
         return data
+    }
+    else if(hits != null){
+        if(hits.length > 0)
+            return hits
     }
     return []
 };
@@ -27,6 +32,8 @@ export default function Jobs(){
 
     const { data } = useJobs();
 
+    const { hits } = useJobContext()
+
     const queryClient = useQueryClient()
 
     const width = useScreenWidth();
@@ -34,7 +41,7 @@ export default function Jobs(){
     const {resultCount, setResultCount} = useResultCount(width.width)
 
     
-    const definedData = isUndefined(data);
+    const definedData = isUndefined(data, hits);
 
     
     const jobList = definedData.map((job, index)=> {

@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom';
 
 import { useThemeContext } from './context/ThemeContext';
+import { JobsProvider } from './context/JobsContext';
 
 import Header from './components/Header/Header'
 
 import './App.css'
+
 
 
 function App() {
@@ -16,7 +18,9 @@ function App() {
       <div className={`app ${theme}`}>
         <Header />
         <main className={`app-content`}>
-          <Outlet />
+          <JobsProvider>
+            <Outlet />
+          </JobsProvider>
         </main>
       </div>
     </>

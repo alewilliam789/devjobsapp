@@ -1,8 +1,11 @@
 import { useForm } from 'react-hook-form';
 
 
+import { index } from '../../algolia';
 import { useScreenWidth } from '../../hooks';
 import { useThemeContext } from '../../context/ThemeContext';
+import { useJobContext } from '../../context/JobsContext';
+
 
 
 import styles from './styles.module.css';
@@ -16,6 +19,8 @@ import {ReactComponent as SearchIcon} from '../../assets/desktop/icon-search.svg
 import {ReactComponent as LocationIcon} from '../../assets/desktop/icon-location.svg';
 import {ReactComponent as FilterIcon} from '../../assets/mobile/icon-filter.svg';
 import { useState } from 'react';
+import { JobData } from '../../types';
+
 
 
 
@@ -25,6 +30,8 @@ export default function SearchBar(){
     const { width } = useScreenWidth();
 
     const { theme } = useThemeContext();
+
+    const { setHits } = useJobContext()
 
     const [hidden, setHidden] = useState(false);
     
@@ -38,14 +45,23 @@ export default function SearchBar(){
         });
 
         interface FormData {
-            jobDescriptor : string;
+            jobDescriptor: string;
             jobLocation: string;
             fullTime: boolean;
         }
 
         function onSubmit(data : FormData){
                 setHidden(false)
-                console.log(data)
+                index.search<JobData>(`${data.jobDescriptor}, ${data.jobLocation}`,
+                    {
+                        filters: `fullTime:${data.fullTime}`
+                    }
+
+                ).then((hits)=>{
+                    setHits(()=> {
+                        return hits.hits
+                    })
+                })
         }
 
         function FullTimeCheckbox(){
