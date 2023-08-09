@@ -53,6 +53,7 @@ export default function SearchBar(){
         }
 
         function onSubmit(data : FormData){
+                    setHidden(false)
                     index.search<JobData>(`${data.jobDescriptor}, ${data.jobLocation}`,
                         {
                             filters: ((!data.fullTime && !data.partTime) || (data.fullTime && data.partTime)) ? '' : `fullTime:${data.fullTime}`
