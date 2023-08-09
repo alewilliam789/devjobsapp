@@ -63,7 +63,7 @@ export default function Jobs(){
                 <ul className={`${styles['jobs-cardlist']}`}>
                     {jobList}
                 </ul>
-                { (resultCount !== definedData.length  && hits == null) &&
+                { (resultCount !== definedData.length  && (hits == null || hits.length > resultCount)) &&
                 (<div style={{alignSelf:"center"}}>
                     <Button buttonType='button' placeholderText='Load More' handleClick={()=>{setResultCount(definedData.length)}} />
                 </div>)}
