@@ -1,4 +1,4 @@
-import {ReactNode, createContext, useContext, useState} from 'react';
+import {ReactNode, createContext, useContext, useEffect, useState} from 'react';
 
 
 
@@ -18,7 +18,15 @@ type ProviderProps = {
 
 export const ThemeProvider = ({ children }: ProviderProps) => {
 
-    const [theme,setTheme] = useState<string>(localStorage.getItem("theme") || "day");
+    const cachedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null
+
+    const previousTheme = window.matchMedia('(prefers-color-scheme:dark').matches ? 'night' : 'day';
+
+    const [theme,setTheme] = useState<string>(cachedTheme || previousTheme);
+
+    useEffect(()=>{
+       console.log(window.matchMedia('(prefers-color-scheme:dark').matches) 
+    },[])
 
     return <ThemeContext.Provider value={{theme,setTheme}}>{children}
                 </ThemeContext.Provider>
