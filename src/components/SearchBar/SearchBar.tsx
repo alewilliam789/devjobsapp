@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 
 
+import { index } from '../../algolia';
 import { useScreenWidth } from '../../hooks';
 import { useThemeContext } from '../../context/ThemeContext';
+
 
 
 import styles from './styles.module.css';
@@ -38,14 +40,21 @@ export default function SearchBar(){
         });
 
         interface FormData {
-            jobDescriptor : string;
+            jobDescriptor: string;
             jobLocation: string;
             fullTime: boolean;
         }
 
         function onSubmit(data : FormData){
                 setHidden(false)
-                console.log(data)
+                index.search(`${data.jobDescriptor}, ${data.jobLocation}`,
+                    {
+                        filters: `fullTime:${data.fullTime}`
+                    }
+
+                ).then((hits)=>{
+                    console.log(hits)
+                })
         }
 
         function FullTimeCheckbox(){
