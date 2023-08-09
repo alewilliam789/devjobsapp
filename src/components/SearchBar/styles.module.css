@@ -73,7 +73,19 @@
     background-color: #19202D;
 }
 
-@media (min-width: 767px){
+@media (min-width:1440px){
+    .searchbar {
+        grid-template-columns: auto auto 35%;
+    }
+
+    .searchbar-search {
+        gap: 8%;
+        white-space: nowrap;
+    }
+
+}
+
+@media (max-width: 1439px) and (min-width: 767px){
     .searchbar {
         grid-template-columns: auto auto 45%;
     }
@@ -87,7 +99,7 @@
   
   @media screen and (max-width: 767px){
     .searchbar {
-        grid-template-columns: auto 125px;
+        grid-template-columns: auto 45%;
     }
 
     .searchbar-search {
