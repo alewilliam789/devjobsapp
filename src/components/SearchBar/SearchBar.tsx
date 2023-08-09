@@ -40,7 +40,8 @@ export default function SearchBar(){
             defaultValues :{
                 jobDescriptor : "",
                 jobLocation: "",
-                fullTime: false
+                fullTime: false,
+                partTime: false
             }
         });
 
@@ -48,28 +49,34 @@ export default function SearchBar(){
             jobDescriptor: string;
             jobLocation: string;
             fullTime: boolean;
+            partTime: boolean;
         }
 
         function onSubmit(data : FormData){
-                setHidden(false)
-                index.search<JobData>(`${data.jobDescriptor}, ${data.jobLocation}`,
-                    {
-                        filters: `fullTime:${data.fullTime}`
-                    }
+                    index.search<JobData>(`${data.jobDescriptor}, ${data.jobLocation}`,
+                        {
+                            filters: ((!data.fullTime && !data.partTime) || (data.fullTime && data.partTime)) ? '' : `fullTime:${data.fullTime}`
+                        }
 
-                ).then((hits)=>{
-                    setHits(()=> {
-                        return hits.hits
+                    ).then((hits)=>{
+                        setHits(()=> {
+                            return hits.hits
+                        })
                     })
-                })
         }
 
         function FullTimeCheckbox(){
             return (
                 <>
-                    <div className={`flex align-center ${styles['searchbar-full-time']}`}>
-                        <input id="full-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
-                        <label htmlFor="full-time" className={`${styles["searchbar-ft-text"]}`}>Full Time</label>
+                    <div className={`flex align-center ${styles['searchbar-full-time-container']}`}>
+                        <div className={`flex align-center ${styles['searchbar-full-time']}`}>
+                            <input id="full-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
+                            <label htmlFor="full-time" className={`${styles["searchbar-ft-text"]}`}>FT</label>
+                        </div>
+                        <div className={`flex align-center ${styles['searchbar-full-time']}`}>
+                            <input id="part-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("partTime")} />
+                            <label htmlFor="part-time" className={`${styles["searchbar-ft-text"]}`}>PT</label>
+                        </div>
                     </div>
                 </>
             )

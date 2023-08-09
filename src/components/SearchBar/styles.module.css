@@ -10,8 +10,12 @@
     padding-left: 4%;
 }
 
+.searchbar-full-time-container {
+    gap: 20%;
+}
+
 .searchbar-full-time {
-    gap: 8%;
+    gap: 10%;
 }
 
 .searchbar-ft-text {
@@ -71,7 +75,7 @@
 
 @media (min-width: 767px){
     .searchbar {
-        grid-template-columns: auto auto 35%;
+        grid-template-columns: auto auto 45%;
     }
 
     .searchbar-search {

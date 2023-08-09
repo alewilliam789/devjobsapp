@@ -15,6 +15,7 @@ interface SearchInputProps {
         jobDescriptor: string;
         jobLocation: string;
         fullTime: boolean;
+        partTime: boolean;
     }>,
     searchParam : SearchParams,
     Icon : React.FunctionComponent<React.SVGProps<SVGSVGElement> & {
