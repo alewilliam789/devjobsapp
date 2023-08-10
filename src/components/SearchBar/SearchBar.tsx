@@ -129,7 +129,7 @@ export default function SearchBar(){
                             </div>
                         )}
                 <form className={`${styles['searchbar']} ${styles[`${theme}`]}`} onSubmit={handleSubmit(onSubmit)}>
-                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 767) ? SearchIcon : null} placeholder="Enter desired job..." />
+                    <SearchInput register={register} searchParam={"jobDescriptor"} Icon={ (width >= 767) ? SearchIcon : null} placeholder={width <= 1439 ? "Filter by title..." : "Filter by title, companies, expertise..."} />
                     <SearchBarSwitcher />
                 </form>
             </>

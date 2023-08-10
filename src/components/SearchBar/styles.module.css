@@ -139,12 +139,12 @@
   
   @media screen and (max-width: 767px){
     .searchbar {
-        grid-template-columns: auto 45%;
+        grid-template-columns: auto 35%;
         margin-bottom: 32px;
     }
 
     .searchbar-search {
-        gap: 25%;
+        gap: 25px;
         white-space: nowrap;
     }
 

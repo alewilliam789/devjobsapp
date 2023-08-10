@@ -66,23 +66,9 @@ export function useScreenYOffset(){
     return windowY
 }
 
-export function useResultCount(windowWidth : number){
+export function useResultCount(){
 
     const [resultCount, setResultCount] = useState<number>(12);
-
-    useLayoutEffect(()=>{
-        setResultCount(()=>{
-            if(windowWidth >= 1440){
-                return 12;
-            }
-            else if (windowWidth <= 767){
-                return 12;
-            }
-            else {
-                return 8;
-            }
-        })
-    },[])
 
     return {resultCount, setResultCount}
 }
