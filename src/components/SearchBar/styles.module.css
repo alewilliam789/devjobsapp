@@ -1,5 +1,6 @@
 .searchbar {
     display: grid;
+    overflow: hidden;
     width: 100%;
     border-radius: 6px;
     padding: 0px 0px;
