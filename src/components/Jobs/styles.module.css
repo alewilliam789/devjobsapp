@@ -1,6 +1,5 @@
 .jobs{
   width: 100%;
-  gap: 31px;
 }
 
 
@@ -12,6 +11,7 @@
   justify-content: space-between;
   grid-column-end: auto;
   gap: 40px 11px;
+  margin-bottom: 56px;
   }
 
 

@@ -106,6 +106,7 @@
 @media (min-width:1440px){
     .searchbar {
         grid-template-columns: auto auto 35%;
+        margin-bottom: 80px;
     }
 
     .searchbar-search {
@@ -122,6 +123,7 @@
 @media (max-width: 1439px) and (min-width: 767px){
     .searchbar {
         grid-template-columns: auto auto 45%;
+        margin-bottom: 48px;
     }
 
     .searchbar-search {
@@ -138,6 +140,7 @@
   @media screen and (max-width: 767px){
     .searchbar {
         grid-template-columns: auto 45%;
+        margin-bottom: 32px;
     }
 
     .searchbar-search {
