@@ -38,7 +38,7 @@ export default function JobDescription(){
             <>
                 <header className={`${width <= 767 ? "flex-column justify-center":"flex justify-start"} align-center ${styles["jobdescription-header"]} ${styles[`${theme}`]}`} style={{height:`${width<=767 ? "205px" : "140px"}`, overflow:`${width<=767 ? "none" : "hidden"}`}}>
                     <Icon iconURL={data ? data.logo : ""} iconType={`${width<=767 ? "description-mobile" : "description"}`} bgColor={data ? data.logoBackground : "white"} iconSize={width <=767 ? {width:"max-content", height: "max-content" }: {width:"81px", height:"max-content"}} 
-                        logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"}/>
+                        logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"} companyName={data ? data.company : ""} />
                     <div className={`${width <= 767 ? "flex-column justify-center":"flex justify-between"} align-center wrap ${styles["jobdescription-header-company"]}`}>
                         <div>
                             <h3>{data?.company}</h3>
