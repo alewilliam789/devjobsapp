@@ -5,7 +5,7 @@ import JobCard from "../JobCard/JobCard";
 import SearchBar from "../SearchBar/SearchBar";
 
 
-import { useJobs, useScreenWidth, useResultCount } from "../../hooks";
+import { useJobs, useResultCount } from "../../hooks";
 import { useJobContext } from "../../context/JobsContext";
 
 import { JobData } from "../../types";
