@@ -36,9 +36,7 @@ export default function Jobs(){
 
     const queryClient = useQueryClient()
 
-    const width = useScreenWidth();
-
-    const {resultCount, setResultCount} = useResultCount(width.width)
+    const {resultCount, setResultCount} = useResultCount()
 
     
     const definedData = isUndefined(data, hits);

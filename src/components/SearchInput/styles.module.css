@@ -35,3 +35,14 @@
 .searchinput-container.night {
     border-right: solid 0.25px #6E8098;
 }
+
+@media screen and (max-width: 767px){
+
+    .searchinput-container.day {
+        border-right: none;
+    }
+
+    .searchinput-container.night {
+        border-right: none;
+    }
+}
