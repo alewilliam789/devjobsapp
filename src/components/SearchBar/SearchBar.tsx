@@ -71,11 +71,11 @@ export default function SearchBar(){
                 <>
                     <div className={`flex align-center ${styles['searchbar-full-time-container']}`}>
                         <div className={`flex align-center ${styles['searchbar-full-time']}`}>
-                            <input id="full-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
+                            <input id="full-time" className={`${theme} ${styles["searchbar-checkbox"]}`} type="checkbox" {...register("fullTime")} />
                             <label htmlFor="full-time" className={`${styles["searchbar-ft-text"]}`}>FT</label>
                         </div>
                         <div className={`flex align-center ${styles['searchbar-full-time']}`}>
-                            <input id="part-time" className={`${styles["searchbar-checkbox"]}`} type="checkbox" {...register("partTime")} />
+                            <input id="part-time" className={`${theme} ${styles["searchbar-checkbox"]}`} type="checkbox" {...register("partTime")} />
                             <label htmlFor="part-time" className={`${styles["searchbar-ft-text"]}`}>PT</label>
                         </div>
                     </div>
