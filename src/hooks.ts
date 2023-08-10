@@ -73,10 +73,10 @@ export function useResultCount(windowWidth : number){
     useLayoutEffect(()=>{
         setResultCount(()=>{
             if(windowWidth >= 1440){
-                return 9;
+                return 12;
             }
             else if (windowWidth <= 767){
-                return 10;
+                return 12;
             }
             else {
                 return 8;
