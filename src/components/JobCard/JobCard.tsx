@@ -23,19 +23,19 @@ export default function JobCard({job}: JobCardProps){
     
     return (
         <>
-        <div className={styles.jobcard}>
-            <Icon iconURL={job.logo} iconType="card" bgColor={job.logoBackground} iconSize={{height:"max-content",width:"max-content"}} logoSize={{width:"50px", height:"50px"}} borderRad='15px'/>
+        <article className={styles.jobcard}>
+            <Icon iconURL={job.logo} iconType="card" bgColor={job.logoBackground} iconSize={{height:"max-content",width:"max-content"}} logoSize={{width:"50px", height:"50px"}} borderRad='15px' companyName={job.company}/>
             <Link to={`jobs/${job.id}`} style={{color:'inherit'}}>
-            <main className={` ${styles["jobcard-body"]} ${styles[`${theme}`]}`}>
+            <section className={` ${styles["jobcard-body"]} ${styles[`${theme}`]}`}>
                 <div className={`${styles["jobcard-text"]}`}>
                     <p>{job.postedAt} • {job.contract}</p>
                     <h3>{job.position}</h3>
                     <p>{job.company}</p>
                     <h4 className={styles["jobcard-location"]}>{job.location}</h4>
                 </div>
-            </main>
+            </section>
             </Link>
-        </div>
+        </article>
         </>
     )
 }

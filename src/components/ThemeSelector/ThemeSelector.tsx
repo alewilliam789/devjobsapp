@@ -37,7 +37,7 @@ export default function ThemeSelector(){
                 return "day"
             }
         })
-    };
+    }
 
 
     return (

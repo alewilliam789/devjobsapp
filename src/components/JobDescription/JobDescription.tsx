@@ -38,14 +38,14 @@ export default function JobDescription(){
             <>
                 <header className={`${width <= 767 ? "flex-column justify-center":"flex justify-start"} align-center ${styles["jobdescription-header"]} ${styles[`${theme}`]}`} style={{height:`${width<=767 ? "205px" : "140px"}`, overflow:`${width<=767 ? "none" : "hidden"}`}}>
                     <Icon iconURL={data ? data.logo : ""} iconType={`${width<=767 ? "description-mobile" : "description"}`} bgColor={data ? data.logoBackground : "white"} iconSize={width <=767 ? {width:"max-content", height: "max-content" }: {width:"81px", height:"max-content"}} 
-                        logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"}/>
-                    <div className={`${width <= 767 ? "flex-column justify-center":"flex justify-between"} align-center wrap ${styles["jobdescription-header-company"]}`}>
+                        logoSize={width<=767 ? {width:"50px",height:"50px"} : {width:"140px",height:"140px"}} borderRad={width<=767 ? "15px":"0px"} companyName={data ? data.company : ""} />
+                    <section className={`${width <= 767 ? "flex-column justify-center":"flex justify-between"} align-center wrap ${styles["jobdescription-header-company"]}`}>
                         <div>
                             <h3>{data?.company}</h3>
                             <p>{data?.website}</p>
                         </div>
                         <Button buttonType="button" buttonStyles={theme == "day" ? "button-2-day" : "button-2-night"} placeholderText="Company Site" size={{width:"147px",height:"48px"}} handleClick={()=>{}} />
-                    </div>
+                    </section>
                 </header>
             </>
         )
@@ -90,7 +90,7 @@ export default function JobDescription(){
     
         return (
             <>
-                <main className={`flex-column ${styles["jobdescription-main"]} ${styles[`${theme}`]}`}>
+                <section className={`flex-column ${styles["jobdescription-main"]} ${styles[`${theme}`]}`}>
                     <header className={`flex justify-between align-center wrap`}>
                         <div className={`flex-column justify-start ${styles["jobdescription-main-header"]} ${styles[`${theme}`]}`}>
                             <p>{data ? data.postedAt : ""} ⋅ {data ? data.contract : ""} </p>
@@ -102,17 +102,17 @@ export default function JobDescription(){
                     <p>
                         {data ? data.description : ""}
                     </p>
-                    <section className={`flex-column ${styles["jobdescription-main-requirements"]}`}>
+                    <article className={`flex-column ${styles["jobdescription-main-requirements"]}`}>
                         <h3 style={{marginBottom:"28px"}}>Requirements</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.requirements.content : ""}</p>
                         <ul className={`flex-column justify-start ${styles[`${theme}`]}`}>{liList({firstId:"requirements"})}</ul>
-                    </section>
-                    <section>
+                    </article>
+                    <article>
                         <h3 style={{marginBottom:"23px"}}>What You Will Do</h3>
                         <p style={{marginBottom:"24px"}}>{data ? data.role.content : ""}</p>
                         <ol className={`flex-column justify-start ${styles[`${theme}`]}`}>{liList({firstId:"role"})}</ol>
-                    </section>
-                </main>
+                    </article>
+                </section>
             </>
         )
     }

@@ -86,7 +86,6 @@ p, li {
 .app-content {
   margin: 0px auto;
   padding: 4.5% 0%;
-  transition: all 1s ease;
 }
 
 @media (min-width:1440px){

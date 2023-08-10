@@ -26,7 +26,7 @@ function isUndefined(data : JobData[] | undefined, hits : JobData[] | null){
             return hits
     }
     return []
-};
+}
 
 export default function Jobs(){
 
