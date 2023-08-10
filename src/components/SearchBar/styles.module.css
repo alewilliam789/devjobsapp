@@ -10,13 +10,8 @@
 .searchbar > div {
     padding-left: 4%;
 }
-
-.searchbar-full-time-container {
-    gap: 20%;
-}
-
 .searchbar-full-time {
-    gap: 10%;
+    gap: 30%;
 }
 
 .searchbar-ft-text {
@@ -33,45 +28,79 @@
 }
 
 .searchbar-checkbox {
+    overflow: hidden;
     width: 22px;
     height: 22px;
     margin: 0px;
     flex-shrink: 0;
+    border-radius: 3px;
 }
 
 .searchbar-checkbox::before {
     content:"";
     display: block;
-    position: relative;
-    height: 22px;
-    width: 22px;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    background-color: #939BF4;
-    border-radius: 4px; 
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
 }
 
-.searchbar-checkbox:hover::before {
-    opacity: 0.5;
-}
-
-.searchbar-checkbox:checked:hover::before {
-    opacity: 0;
+.searchbar-checkbox::after {
+    content:"";
+    display: block;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
 }
 
 .searchbar-checkbox:checked {
+    width: 22px;
+    height: 22px;
+    margin: 0px;
+    flex-shrink: 0;
     accent-color: #5964E0;
 }
 
 .day {
     color: #19202D;
     background-color: white;
+
+    & .searchbar-checkbox::before {
+        background-color: #E7E8E9;
+    }
+
+    & .searchbar-checkbox:checked::before {
+        opacity: 0;
+    }
+
+    & .searchbar-checkbox:checked::after {
+        opacity: 0;
+    }
+
+    & .searchbar-checkbox:hover:after {
+        background-color: #D6D8F8;
+    }
 }
 
 .night {
     color: white;
     background-color: #19202D;
+
+    & .searchbar-checkbox::before {
+        background-color: #323743;
+    }
+
+    & .searchbar-checkbox:checked::before {
+        opacity: 0;
+    }
+
+    & .searchbar-checkbox:checked::after {
+        opacity: 0;
+    }
+    & .searchbar-checkbox:hover:after {
+        background-color: #6A6E76;
+    }
 }
 
 @media (min-width:1440px){
@@ -82,6 +111,10 @@
     .searchbar-search {
         gap: 8%;
         white-space: nowrap;
+    }
+
+    .searchbar-full-time-container {
+        gap: 55%;
     }
 
 }
@@ -95,6 +128,10 @@
         gap: 8%;
         white-space: nowrap;
     }
+
+    .searchbar-full-time-container {
+        gap: 40%;
+    }
   }
   
   
@@ -106,5 +143,9 @@
     .searchbar-search {
         gap: 25%;
         white-space: nowrap;
+    }
+
+    .searchbar-full-time-container {
+        gap: 20%;
     }
   }
